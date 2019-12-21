@@ -69,11 +69,12 @@ const AboutMe: React.FC = () => {
           </Text>
         </ContentBody>
       </ContentContainer>
+
       <ProjectContainer>
         <ProjectHead>
-          <SubTitle>지금까지 진행한 프로젝트를 소개합니다.</SubTitle>
+          <SubTitle>프로젝트를 소개합니다.</SubTitle>
           <Text style={{ textAlign: "center" }}>
-            꾸준하게 프로젝트를 진행하려고 노력하고 있습니다.
+            꾸준하게 프로젝트를 진행하려 노력하고 있습니다.
           </Text>
         </ProjectHead>
         <ContentBody>
