@@ -7,16 +7,8 @@ const App: React.FC = () => {
   return (
     <div>
       <Switch>
-        <Route
-          exact
-          path={process.env.REACT_APP_PRODUCTION_URL + "/"}
-          component={Main}
-        />
-        <Route
-          exact
-          path={process.env.REACT_APP_PRODUCTION_URL + "/about-me"}
-          component={AboutMe}
-        />
+        <Route exact path="/" component={Main} />
+        <Route exact path="/about-me" component={AboutMe} />
       </Switch>
     </div>
   );
