@@ -11,7 +11,7 @@ import {
 const Main: React.FC = () => {
   return (
     <MainContainer>
-      <MainTitle>인사문구</MainTitle>
+      <MainTitle>환영합니다!</MainTitle>
       <MainBottom>
         <StyledLink to="/portfolio/about-me">
           <Button>더 알아보기</Button>
