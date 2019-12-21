@@ -7,7 +7,7 @@ import "./css/reset.css";
 require("dotenv").config();
 
 ReactDOM.render(
-  <BrowserRouter basename={process.env.REACT_APP_DEV_URL}>
+  <BrowserRouter basename={process.env.REACT_APP_PRODUCTION_URL}>
     <App />
   </BrowserRouter>,
   document.getElementById("root")
