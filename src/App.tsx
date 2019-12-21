@@ -7,10 +7,14 @@ const App: React.FC = () => {
   return (
     <div>
       <Switch>
-        <Route exact path={process.env.PUBLIC_URL + "/"} component={Main} />
         <Route
           exact
-          path={process.env.PUBLIC_URL + "/about-me"}
+          path={process.env.REACT_APP_PRODUCTION_URL + "/"}
+          component={Main}
+        />
+        <Route
+          exact
+          path={process.env.REACT_APP_PRODUCTION_URL + "/about-me"}
           component={AboutMe}
         />
       </Switch>
