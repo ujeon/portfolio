@@ -181,25 +181,25 @@ export const GridItem = styled.div`
 
 export const ProjectImgContainer = styled.div`
   width: 100%;
-  height: 60%;
+  height: 40%;
   margin: 0;
   overflow: hidden;
   background-color: #000;
 
   @media only screen and ${device.tablet} {
-    height: 100%;
+    height: 50%;
   }
 
   @media only screen and ${device.mobileL} {
-    height: 65%;
+    height: 50%;
   }
 
   @media only screen and ${device.mobileM} {
-    height: 60%;
+    height: 40%;
   }
 
   @media only screen and ${device.mobileS} {
-    height: 55%;
+    height: 0%;
   }
 `;
 
@@ -218,10 +218,6 @@ export const ProjectImg = styled.img`
 
 export const ProjectDescriptions = styled.ul`
   width: 100%;
-
-  @media only screen and ${device.tablet} {
-    margin-bottom: 20%;
-  }
 `;
 
 export const Description = styled.li`
