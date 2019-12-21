@@ -117,18 +117,23 @@ export const ContentContainer = styled.div`
   align-items: center;
   background-color: #f4f4f4;
   justify-content: center;
-  height: 100vh;
+  height: 70vh;
+
+  @media only screen and ${device.tablet} {
+    height: 90vh;
+  }
 `;
 
 export const ContentHead = styled.div`
-  flex: 0.4;
+  flex: 1;
   width: 100%;
 `;
 
 export const ContentBody = styled.div`
-  flex: 2;
+  flex: 3;
   width: 100%;
-  margin-top: 5%;
+  height: 60%
+  margin-top: 3%;
 `;
 
 //**********************************//
@@ -142,10 +147,19 @@ export const ProjectContainer = styled.div`
   align-items: center;
   background-color: #ffffff;
   justify-content: center;
-  height: 100vh;
+  height: 130vh;
 
   @media only screen and ${device.tablet} {
-    height: 350vh;
+    height: 500vh;
+  }
+`;
+
+export const ProjectHead = styled.div`
+  flex: 1;
+  width: 100%;
+
+  @media only screen and ${device.tablet} {
+    flex: 0.2;
   }
 `;
 
@@ -167,13 +181,13 @@ export const GridItem = styled.div`
 
 export const ProjectImgContainer = styled.div`
   width: 100%;
-  height: 40%;
+  height: 60%;
   margin: 0;
   overflow: hidden;
   background-color: #000;
 
   @media only screen and ${device.tablet} {
-    height: 70%;
+    height: 100%;
   }
 
   @media only screen and ${device.mobileL} {
@@ -212,7 +226,7 @@ export const ProjectDescriptions = styled.ul`
 
 export const Description = styled.li`
   font-size: 1.15rem;
-  padding-left: 10%;
+  padding-left: 5%;
   margin-top: 5%;
 `;
 
@@ -239,17 +253,17 @@ export const Button = styled.button`
   }
 
   @media only screen and ${device.mobileL} {
-    padding: 5px 15px;
+    padding: 10px 20px;
     font-size: 1rem;
   }
 
   @media only screen and ${device.mobileM} {
-    padding: 4px 12px;
+    padding: 10px 20px;
     font-size: 1rem;
   }
 
   @media only screen and ${device.mobileS} {
-    padding: 3px 10px;
+    padding: 7px 15px;
     font-size: 0.9rem;
   }
 `;
@@ -269,17 +283,17 @@ export const SubTitle = styled.h2`
   }
 
   @media only screen and ${device.mobileL} {
+    font-size: 1.6rem;
     margin-top: 10%;
-    font-size: 1.7rem;
   }
 
   @media only screen and ${device.mobileM} {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-top: 10%;
   }
 
   @media only screen and ${device.mobileS} {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-top: 10%;
   }
 `;
@@ -289,6 +303,7 @@ export const Text = styled.p`
   width: 80%;
   margin: 0 10% 0 10%;
   line-height: 170%;
+  text-align: center;
 
   @media only screen and ${device.mobileL} {
     font-size: 1rem;
@@ -323,6 +338,7 @@ export const FooterContainer = styled.div`
   height: 8vh;
   display: flex;
   flex-direction: column;
+  z-index:10;
 
   @media only screen and ${device.tablet} {
    height: 20vh

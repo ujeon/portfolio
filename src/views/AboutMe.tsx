@@ -13,6 +13,7 @@ import {
   Text,
   TextSmall,
   ProjectContainer,
+  ProjectHead,
   Grid,
   GridItem,
   ProjectImgContainer,
@@ -41,143 +42,160 @@ const AboutMe: React.FC = () => {
       <IntroContainer>
         <IntroHead>
           <IntroTitle>안녕하세요</IntroTitle>
-          <IntroTitle>제 이름은 장우전 입니다.</IntroTitle>
+          <IntroTitle>제 이름은 장우전 입니다</IntroTitle>
           <Button onClick={scrollBottom}>연락하기</Button>
         </IntroHead>
       </IntroContainer>
 
       <ContentContainer>
         <ContentHead>
-          <SubTitle>제목</SubTitle>
+          <SubTitle>개발을 통해 가치를 전달하고 싶습니다.</SubTitle>
         </ContentHead>
         <ContentBody>
           <Text>
-            하늘은 푸르다 못해 농회색으로 캄캄하나 별들만은 또렷또렷 빛난다.
-            침침한 어둠뿐만 아니라 오삭오삭 춥다. 이 육중한 기류 가운데 자조하는
-            한 젊은이가 있다. 그를 나라고 불러두자. 나는 이 어둠에서 배태되고 이
-            어둠에서 생장하여서 아직도 이 어둠 속에 그대로 생존하나 보다. 이제
-            내가 갈 곳이 어딘지 몰라 허우적거리는 것이다. 하기는 나는 세기의
-            초점인 듯 초췌하다. 얼핏 생각하기에는 내 바닥을 반듯이 받들어 주는
-            것도 없고 그렇다고 내 머리를 갑박이 나려 누르는 아무것도 없는
-            듯하다마는 내막은 그렇지도 않다. 나는 도무지 자유스럽지 못하다. 다만
-            나는 없는 듯 있는 하루살이처럼 허공에 부유하는 한 점에 지나지
-            않는다. 이것이 하루살이처럼 경쾌하다면 마침 다행할 것인데 그렇지를
-            못하구나!
+            세상에 존재하는 많은 직업들은 저마다 사회에 필요한 가치를
+            전달합니다.
+          </Text>
+          <br></br>
+          <Text>
+            그리고 저는 개발자로써 사회에 긍정적인 가치를 전달하려고 합니다.
+          </Text>
+          <br></br>
+          <Text>아직 서투르고 부족한 점이 많은 초보 개발자이지만,</Text>
+          <br></br>
+          <Text>
+            어제보다는 오늘, 오늘보다는 내일에 더 성숙한 개발자가 되기 위해
+            노력하고 있습니다.
           </Text>
         </ContentBody>
       </ContentContainer>
       <ProjectContainer>
-        <ContentHead>
-          <SubTitle>제목</SubTitle>
-          <Text style={{ textAlign: "center" }}>프로젝트에 대한 짧은 생각</Text>
-        </ContentHead>
+        <ProjectHead>
+          <SubTitle>지금까지 진행한 프로젝트를 소개합니다.</SubTitle>
+          <Text style={{ textAlign: "center" }}>
+            꾸준하게 프로젝트를 진행하려고 노력하고 있습니다.
+          </Text>
+        </ProjectHead>
         <ContentBody>
           <Grid>
             <GridItem>
               <ProjectImgContainer>
-                <a href="PROJECT_URL">
+                <a href="https://github.com/ujeon/til/blob/master/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%9A%8C%EA%B3%A0%EB%A1%9D/1st-project.md">
                   <ProjectImg
-                    src={require("../assets/images/005_2_The_Egg_d_01.png")}
-                    alt="프로젝트1"
+                    src={require("../assets/images/uritube-screenshot.png")}
+                    alt="Uritube"
                   />
                 </a>
               </ProjectImgContainer>
               <ProjectDescriptions>
-                <Text style={{ textAlign: "center" }}>프로젝트명</Text>
+                <Text style={{ textAlign: "center" }}>우리튜브</Text>
                 <Description>
                   <Icon
                     className="icon ion-ios-calendar"
                     style={{ marginBottom: "1%" }}
                   ></Icon>
-                  <TextSmall>9999.99.99 ~ 9999.99.99</TextSmall>
+                  <TextSmall>2019년 09월</TextSmall>
                 </Description>
                 <Description>
                   <Icon
                     className="icon ion-ios-filing"
                     style={{ marginBottom: "1%" }}
                   />
-                  <TextSmall>간단한 프로젝트 설명을 적어주세요.</TextSmall>
+                  <TextSmall>
+                    특정한 주제의 동영상을 시청하고,
+                    <br />
+                    사용자들끼리 이야기할 수 있는 웹사이트
+                    <br />
+                    입니다.
+                  </TextSmall>
                 </Description>
               </ProjectDescriptions>
             </GridItem>
             <GridItem>
               <ProjectImgContainer>
-                <a href="PROJECT_URL">
+                <a href="https://github.com/ujeon/til/blob/master/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%ED%9A%8C%EA%B3%A0%EB%A1%9D/2nd-project.md">
                   <ProjectImg
-                    src={require("../assets/images/005_2_The_Egg_d_02.png")}
-                    alt="프로젝트2"
+                    src={require("../assets/images/secondhand-screenshot.png")}
+                    alt="Secondhand"
                   />
                 </a>
               </ProjectImgContainer>
               <ProjectDescriptions>
-                <Text style={{ textAlign: "center" }}>프로젝트명</Text>
+                <Text style={{ textAlign: "center" }}>세컨핸드</Text>
                 <Description>
                   <Icon
                     className="icon ion-ios-calendar"
                     style={{ marginBottom: "1%" }}
                   ></Icon>
-                  <TextSmall>9999.99.99 ~ 9999.99.99</TextSmall>
+                  <TextSmall>2019년 10월</TextSmall>
                 </Description>
                 <Description>
                   <Icon
                     className="icon ion-ios-filing"
                     style={{ marginBottom: "1%" }}
                   />
-                  <TextSmall>간단한 프로젝트 설명을 적어주세요.</TextSmall>
+                  <TextSmall>
+                    중고 유모차 거래자들이 합리적인 가격결정을 할 수 있도록 가격
+                    정보를 제공하는 서비스입니다.
+                  </TextSmall>
                 </Description>
               </ProjectDescriptions>
             </GridItem>
             <GridItem>
               <ProjectImgContainer>
-                <a href="PROJECT_URL">
-                  <ProjectImg
-                    src={require("../assets/images/005_2_The_Egg_d_03.png")}
-                    alt="프로젝트3"
-                  />
-                </a>
+                {/* <a href="PROJECT_URL"> */}
+                <ProjectImg
+                  src={require("../assets/images/geumhwafood-screenshot.png")}
+                  alt="geumhwafood"
+                />
+                {/* </a> */}
               </ProjectImgContainer>
               <ProjectDescriptions>
-                <Text style={{ textAlign: "center" }}>프로젝트명</Text>
+                <Text style={{ textAlign: "center" }}>금화푸드 재고관리</Text>
                 <Description>
                   <Icon
                     className="icon ion-ios-calendar"
                     style={{ marginBottom: "1%" }}
                   ></Icon>
-                  <TextSmall>9999.99.99 ~ 9999.99.99</TextSmall>
+                  <TextSmall>2019년 11월 ~</TextSmall>
                 </Description>
                 <Description>
                   <Icon
                     className="icon ion-ios-filing"
                     style={{ marginBottom: "1%" }}
                   />
-                  <TextSmall>간단한 프로젝트 설명을 적어주세요.</TextSmall>
+                  <TextSmall>
+                    베이커리 업체의 재고조회, 관리를 돕는 웹사이트입니다.
+                  </TextSmall>
                 </Description>
               </ProjectDescriptions>
             </GridItem>
             <GridItem>
               <ProjectImgContainer>
-                <a href="PROJECT_URL">
-                  <ProjectImg
-                    src={require("../assets/images/005_2_The_Egg_d_04.png")}
-                    alt="프로젝트4"
-                  />
-                </a>
+                {/* <a href="PROJECT_URL"> */}
+                <ProjectImg
+                  src={require("../assets/images/misinterpreter-screenshot.png")}
+                  alt="misinterpreters"
+                />
+                {/* </a> */}
               </ProjectImgContainer>
               <ProjectDescriptions>
-                <Text style={{ textAlign: "center" }}>프로젝트명</Text>
+                <Text style={{ textAlign: "center" }}>오역자들</Text>
                 <Description>
                   <Icon
                     className="icon ion-ios-calendar"
                     style={{ marginBottom: "1%" }}
                   ></Icon>
-                  <TextSmall>9999.99.99 ~ 9999.99.99</TextSmall>
+                  <TextSmall>2019년 11월 ~</TextSmall>
                 </Description>
                 <Description>
                   <Icon
                     className="icon ion-ios-filing"
                     style={{ marginBottom: "1%" }}
                   />
-                  <TextSmall>간단한 프로젝트 설명을 적어주세요.</TextSmall>
+                  <TextSmall>
+                    주 1회 영문 기술 블로그를 번역하는 스터디입니다.
+                  </TextSmall>
                 </Description>
               </ProjectDescriptions>
             </GridItem>
@@ -188,7 +206,7 @@ const AboutMe: React.FC = () => {
       <FooterContainer ref={elFooter}>
         <ContactMethods>
           <OtherMethods>
-            <SocialLink>Blog</SocialLink>
+            <SocialLink href="https://github.com/ujeon/til">Blog</SocialLink>
           </OtherMethods>
           <SocialMediaIcons>
             <SocialLink href="https://github.com/ujeon?tab=repositories">
