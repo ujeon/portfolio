@@ -8,6 +8,8 @@ import introImage_p from "./../assets/images/014_beauty_p_04.jpg";
 
 import mainImage from "./../assets/images/014_beauty_d_04.jpg";
 
+import Palette from "../palette.json";
+
 //**********************************//
 //*********    메인 페이지   **********//
 //**********************************//
@@ -26,7 +28,7 @@ export const MainContainer = styled.div`
 
 export const MainTitle = styled.h1`
   font-size: 3rem;
-  color: #fff;
+  color: ${Palette["title-text"]};
 `;
 
 export const MainBottom = styled.div`
@@ -86,7 +88,7 @@ export const IntroHead = styled.div`
 
 export const IntroTitle = styled.h1`
   font-size: 3.3rem;
-  color: #ffffff;
+  color: ${Palette["title-text"]};
   margin: 2% 0 2% 0%;
 
   @media only screen and ${device.tablet} {
@@ -145,7 +147,6 @@ export const ProjectContainer = styled.div`
   width: 100%;
   flex-direction: column;
   align-items: center;
-  background-color: #ffffff;
   justify-content: center;
   height: 130vh;
 
@@ -236,9 +237,9 @@ export const Button = styled.button`
   font-size: 1.3rem;
   text-decoration: none;
   border-radius: 200px;
-  background-color: #e67e22;
-  border: 1px solid #e67e22;
-  color: #fff;
+  background-color: ${Palette["main-color"]};
+  border: 1px solid ${Palette["main-color"]};
+  color: ${Palette["title-text"]};
   &:hover,
   &:active {
     background-color: #cf6d17;
@@ -271,7 +272,7 @@ export const SubTitle = styled.h2`
   &:after {
     display: block;
     height: 2px;
-    background-color: #e67e22;
+    background-color: ${Palette["main-color"]};
     content: " ";
     width: 100px;
     margin: 0 auto;
@@ -320,7 +321,7 @@ export const TextSmall = styled.p`
 
 export const Icon = styled.i`
   font-size: 1.5rem;
-  color: #e67e22;
+  color: ${Palette["main-color"]};
 `;
 
 //**********************************//
@@ -378,7 +379,7 @@ export const SocialMediaIcons = styled.div`
 
 export const IconFooter = styled.i`
   font-size: 1.5rem;
-  color: #888;
+  color: ${Palette["footer-content"]};
 
   &:hover,
   &:active {
@@ -390,7 +391,7 @@ export const SocialLink = styled.a`
   text-decoration: none;
   border: 0;
   font-size: 1.1rem;
-  color: #888;
+  color: ${Palette["footer-content"]};
   margin: 0 2.5% 0 2.5%
   transition: color 0.2s;
   
@@ -404,7 +405,7 @@ export const CopyRight = styled.div`
   width: 100%
   text-align: center;
   font-size: 0.8rem;
-  color: #888;
+  color: ${Palette["footer-content"]};
   margin-top:3%
 `;
 
