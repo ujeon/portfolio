@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { device } from "./display";
 
@@ -9,6 +9,21 @@ import introImage_p from "./../assets/images/014_beauty_p_04.jpg";
 import mainImage from "./../assets/images/014_beauty_d_04.jpg";
 
 import Palette from "../palette.json";
+
+//**********************************//
+//***          애니메이션           ***//
+//**********************************//
+const moveInBottom = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+`;
 
 //**********************************//
 //*********    메인 페이지   **********//
@@ -90,6 +105,8 @@ export const IntroTitle = styled.h1`
   font-size: 3.3rem;
   color: ${Palette["title-text"]};
   margin: 2% 0 2% 0%;
+
+  animation: 2s ${moveInBottom};
 
   @media only screen and ${device.tablet} {
     font-size: 3rem;

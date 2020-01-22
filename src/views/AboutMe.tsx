@@ -41,7 +41,7 @@ const AboutMe: React.FC = () => {
       <FooterContainer ref={elFooter}>
         <ContactMethods>
           <OtherMethods>
-            <SocialLink href="https://github.com/ujeon/til">Blog</SocialLink>
+            <SocialLink href="https://medium.com/@wj9304">Blog</SocialLink>
           </OtherMethods>
           <SocialMediaIcons>
             <SocialLink href="https://github.com/ujeon?tab=repositories">
