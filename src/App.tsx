@@ -1,19 +1,11 @@
 import React from "react";
 
-import { Switch, Route, useHistory } from "react-router-dom";
-import ReactGA from "react-ga";
+import { Switch, Route } from "react-router-dom";
 
 import Main from "./views/Main";
 import AboutMe from "./views/AboutMe";
 
-ReactGA.initialize("UA-156912055-1");
-ReactGA.pageview("/");
-ReactGA.pageview("/about-me");
-
 const App: React.FC = () => {
-  let history = useHistory();
-  history.listen(location => ReactGA.pageview(location.pathname));
-
   return (
     <div>
       <Switch>
