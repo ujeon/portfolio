@@ -7,8 +7,8 @@ import Main from "./views/Main";
 import AboutMe from "./views/AboutMe";
 
 ReactGA.initialize("UA-156912055-1");
-ReactGA.pageview("/about-me");
 ReactGA.pageview("/");
+ReactGA.pageview("/about-me");
 
 const App: React.FC = () => {
   return (
