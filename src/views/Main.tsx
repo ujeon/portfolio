@@ -10,7 +10,6 @@ import {
   StyledLink
 } from "../components/styledComponents";
 
-ReactGA.initialize("UA-156912055-1");
 ReactGA.pageview("/");
 
 const Main: React.FC = () => {
