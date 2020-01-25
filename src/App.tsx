@@ -7,12 +7,10 @@ import AboutMe from "./views/AboutMe";
 
 const App: React.FC = () => {
   return (
-    <div>
-      <Switch>
-        <Route exact path="/" component={Main} />
-        <Route exact path="/about-me" component={AboutMe} />
-      </Switch>
-    </div>
+    <Switch>
+      <Route exact path="/" component={Main} />
+      <Route exact path="/about-me" component={AboutMe} />
+    </Switch>
   );
 };
 
