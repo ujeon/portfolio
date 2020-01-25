@@ -1,9 +1,14 @@
 import React from "react";
 
 import { Switch, Route } from "react-router-dom";
+import ReactGA from "react-ga";
 
 import Main from "./views/Main";
 import AboutMe from "./views/AboutMe";
+
+ReactGA.initialize("UA-156912055-1");
+ReactGA.pageview("/about-me");
+ReactGA.pageview("/");
 
 const App: React.FC = () => {
   return (

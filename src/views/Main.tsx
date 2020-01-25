@@ -1,7 +1,5 @@
 import React from "react";
 
-import ReactGA from "react-ga";
-
 import {
   MainContainer,
   MainTitle,
@@ -9,8 +7,6 @@ import {
   MainBottom,
   StyledLink
 } from "../components/styledComponents";
-
-ReactGA.pageview("/");
 
 const Main: React.FC = () => {
   return (
