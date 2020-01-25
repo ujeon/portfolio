@@ -1,14 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { HashRouter } from "react-router-dom";
+import ReactGA from "react-ga";
+
+// import { HashRouter } from "react-router-dom";
+import { createBrowserHistory } from "history";
+import { Router } from "react-router-dom";
 
 import App from "./App";
 import "./css/reset.css";
 require("dotenv").config();
 
+const history = createBrowserHistory();
+
+history.listen(location => {
+  ReactGA.set({ page: location.pathname });
+  ReactGA.pageview(location.pathname);
+});
+
 ReactDOM.render(
-  <HashRouter basename={process.env.PUBLIC_URL}>
+  // <HashRouter basename={process.env.PUBLIC_URL}>
+  <Router history={history}>
     <App />
-  </HashRouter>,
+  </Router>,
+  // </HashRouter>,
   document.getElementById("root")
 );
