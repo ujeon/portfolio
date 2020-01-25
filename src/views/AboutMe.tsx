@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+
 import ReactGA from "react-ga";
 
 import IntroduceSection from "./IntroduceSection";
@@ -19,7 +20,6 @@ import {
   CopyRight
 } from "../components/styledComponents";
 
-ReactGA.initialize("UA-156912055-1");
 ReactGA.pageview("/about-me");
 
 const AboutMe: React.FC = () => {
