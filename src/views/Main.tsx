@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 
 import {
   MainContainer,
@@ -9,6 +10,8 @@ import {
 } from "../components/styledComponents";
 
 const Main: React.FC = () => {
+  ReactGA.pageview("/");
+
   return (
     <MainContainer>
       <MainTitle>환영합니다</MainTitle>
