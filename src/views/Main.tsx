@@ -13,7 +13,7 @@ const Main: React.FC = () => {
     <MainContainer>
       <MainTitle>환영합니다</MainTitle>
       <MainBottom>
-        <StyledLink to="/about-me/">
+        <StyledLink to="/about-me">
           <Button>더 알아보기</Button>
         </StyledLink>
       </MainBottom>
