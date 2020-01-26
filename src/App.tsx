@@ -7,13 +7,13 @@ import Main from "./views/Main";
 import AboutMe from "./views/AboutMe";
 
 ReactGA.initialize("UA-156912055-1");
-ReactGA.pageview("/portfolio/");
+ReactGA.pageview("/");
 
 const App: React.FC = () => {
   return (
     <Switch>
-      <Route exact path="/portfolio/" component={Main} />
-      <Route exact path="/portfolio/about-me" component={AboutMe} />
+      <Route exact path="/" component={Main} />
+      <Route exact path="/about-me" component={AboutMe} />
     </Switch>
   );
 };
