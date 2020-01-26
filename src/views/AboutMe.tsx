@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import ReactGA from "react-ga";
 
 import IntroduceSection from "./IntroduceSection";
 import ProjectSection from "./ProjectSection";
@@ -19,6 +20,8 @@ import {
 } from "../components/styledComponents";
 
 const AboutMe: React.FC = () => {
+  ReactGA.pageview("/about-me");
+
   const elFooter = useRef(document.createElement("div"));
 
   const scrollBottom = () => {
