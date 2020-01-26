@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { RouteComponentProps } from "react-router-dom";
 import ReactGA from "react-ga";
 
 import IntroduceSection from "./IntroduceSection";
@@ -19,8 +20,13 @@ import {
   CopyRight
 } from "../components/styledComponents";
 
-const AboutMe: React.FC = () => {
-  ReactGA.pageview("/about-me");
+const AboutMe: React.FC<RouteComponentProps> = ({
+  location
+}: RouteComponentProps) => {
+  const page = location.pathname;
+
+  ReactGA.set({ page });
+  ReactGA.pageview(page);
 
   const elFooter = useRef(document.createElement("div"));
 

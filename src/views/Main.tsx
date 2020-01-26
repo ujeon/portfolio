@@ -1,4 +1,6 @@
 import React from "react";
+import { RouteComponentProps } from "react-router-dom";
+
 import ReactGA from "react-ga";
 
 import {
@@ -9,8 +11,13 @@ import {
   StyledLink
 } from "../components/styledComponents";
 
-const Main: React.FC = () => {
-  ReactGA.pageview("/");
+const Main: React.FC<RouteComponentProps> = ({
+  location
+}: RouteComponentProps) => {
+  const page = location.pathname;
+
+  ReactGA.set({ page });
+  ReactGA.pageview(page);
 
   return (
     <MainContainer>
