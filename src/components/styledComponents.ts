@@ -2,11 +2,11 @@ import styled, { keyframes } from "styled-components";
 import { Link } from "react-router-dom";
 import { device } from "./display";
 
-import introImage_d from "./../assets/images/014_beauty_d_03.jpg";
-import introImage_t from "./../assets/images/014_beauty_t_04.jpg";
-import introImage_p from "./../assets/images/014_beauty_p_04.jpg";
+import introImage_d from "./../assets/images/alisa-olaivar-5bjgzAPKzpI-unsplash-landscape-min.png";
+import introImage_t from "./../assets/images/alisa-olaivar-5bjgzAPKzpI-unsplash-portrait-medium-min.png";
+import introImage_p from "./../assets/images/alisa-olaivar-5bjgzAPKzpI-unsplash-portrait-small-min.png";
 
-import mainImage from "./../assets/images/014_beauty_d_04.jpg";
+import mainImage from "../assets/images/han-chenxu-tu_mv6p2p5U-unsplash.jpg";
 
 import Palette from "../palette.json";
 
@@ -29,30 +29,64 @@ const moveInBottom = keyframes`
 //*********    메인 페이지   **********//
 //**********************************//
 export const MainContainer = styled.div`
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url(${mainImage});
-  background-size: cover;
-  background-position: center;
+  background-image: url(${mainImage});
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right center;
   background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+
+  @media only screen and ${device.tablet} {
+    background-size: cover;
+  }
+`;
+
+export const MainImage = styled.img`
+  height: inherit;
+  flex: 1;
+
+  @media only screen and ${device.tablet} {
+    visibility: hidden;
+    display: none;
+  }
+`;
+
+export const MainContentContainter = styled.div`
+  height: inherit;
+  flex: 3;
+  background-color: rgb(182, 87, 103);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+
+  @media only screen and ${device.tablet} {
+    width: 100%;
+    background-color: rgba(215, 145, 171, 0.3);
+    background-size: cover;
+  }
 `;
 
 export const MainTitle = styled.h1`
   font-size: 3rem;
+  font-weight: 400;
+  font-family: "Do Hyeon", sans-serif;
   color: ${Palette["title-text"]};
 `;
 
 export const MainBottom = styled.div`
   width: 100%
-  height: 50%;
+  height: 20%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+
+  @media only screen and ${device.tablet} {
+    width: 100%;
+    height: 40%;
+  }
 `;
 
 //**********************************//
@@ -86,13 +120,24 @@ export const IntroContainer = styled.div`
   height: 100vh;
 
   @media only screen and ${device.tablet} {
+    background-size: contain;
+    background-position: top;
+    background-repeat no-repeat;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url(${introImage_t});
+      height: 100vh;
+
   }
 
   @media only screen and ${device.mobileL} {
+    background-color: #000;
+    background-size: contain;
+    background-position: top;
+    background-repeat no-repeat;
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
       url(${introImage_p});
+      height: 100vh;
+
   }
 `;
 
@@ -259,7 +304,7 @@ export const Button = styled.button`
   color: ${Palette["title-text"]};
   &:hover,
   &:active {
-    background-color: #cf6d17;
+    background-color: #a04655;
   }
 
   &:focus {
@@ -280,6 +325,14 @@ export const Button = styled.button`
     padding: 7px 15px;
     font-size: 0.9rem;
   }
+`;
+
+export const TextButton = styled.div`
+  display: inline-block;
+  padding: 10px 30px;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: ${Palette["title-text"]};
 `;
 
 export const SubTitle = styled.h2`
