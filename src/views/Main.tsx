@@ -13,7 +13,7 @@ import {
   MainContentContainter
 } from "../components/styledComponents";
 
-import mainImage from "../assets/images/han-chenxu-tu_mv6p2p5U-unsplash.jpg";
+import mainImage from "../assets/images/han-chenxu-tu_mv6p2p5U-unsplash-min.jpg";
 
 const Main: React.FC<RouteComponentProps> = ({
   location
