@@ -2,14 +2,14 @@
   {
     "projectName": "우리튜브",
     "image": "uritube",
-    "url": "https://github.com/ujeon/til/blob/master/%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%92%E1%85%AC%E1%84%80%E1%85%A9%E1%84%85%E1%85%A9%E1%86%A8/1st-project.md",
-    "description": "특정한 주제의 동영상을 시청하고, 사용자들끼리 이야기할 수 있는 웹사이트입니다.",
+    "url": "https://medium.com/@wj9304/%EC%B2%AB-%EB%B2%88%EC%A7%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%A5%BC-%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0-653734c49f7b",
+    "description": "관심 주제의 동영상을 시청하고, 사용자들끼리 이야기할 수 있는 웹사이트입니다.",
     "date": "2019년 09월"
   },
   {
     "projectName": "세컨핸드",
     "image": "secondhand",
-    "url": "https://github.com/ujeon/til/blob/master/%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9%E1%84%8C%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B3%20%E1%84%92%E1%85%AC%E1%84%80%E1%85%A9%E1%84%85%E1%85%A9%E1%86%A8/2nd-project.md",
+    "url": "https://medium.com/@wj9304/%EB%91%90-%EB%B2%88%EC%A7%B8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%EB%A5%BC-%EB%8F%8C%EC%95%84%EB%B3%B4%EB%A9%B0-f8c410f4bebf",
     "description": "중고 유모차 거래자들이 합리적인 가격결정을 할 수 있도록 가격정보를 제공하는 서비스입니다.",
     "date": "2019년 10월"
   },
@@ -23,7 +23,7 @@
   {
     "projectName": "오역자들",
     "image": "misinterpreter",
-    "url": "",
+    "url": "https://misinterpriter.com",
     "description": "주 1회 영문 기술 블로그를 번역하는 스터디입니다.",
     "date": "2019년 11월 ~"
   }
