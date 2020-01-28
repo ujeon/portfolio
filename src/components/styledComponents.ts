@@ -6,7 +6,7 @@ import introImage_d from "./../assets/images/alisa-olaivar-5bjgzAPKzpI-unsplash-
 import introImage_t from "./../assets/images/alisa-olaivar-5bjgzAPKzpI-unsplash-portrait-medium-min.png";
 import introImage_p from "./../assets/images/alisa-olaivar-5bjgzAPKzpI-unsplash-portrait-small-min.png";
 
-import mainImage from "../assets/images/han-chenxu-tu_mv6p2p5U-unsplash.jpg";
+import mainImage from "../assets/images/han-chenxu-tu_mv6p2p5U-unsplash-min.jpg";
 
 import Palette from "../palette.json";
 
