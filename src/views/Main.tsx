@@ -6,10 +6,14 @@ import ReactGA from "react-ga";
 import {
   MainContainer,
   MainTitle,
-  Button,
+  TextButton,
   MainBottom,
-  StyledLink
+  StyledLink,
+  MainImage,
+  MainContentContainter
 } from "../components/styledComponents";
+
+import mainImage from "../assets/images/han-chenxu-tu_mv6p2p5U-unsplash.jpg";
 
 const Main: React.FC<RouteComponentProps> = ({
   location
@@ -21,12 +25,15 @@ const Main: React.FC<RouteComponentProps> = ({
 
   return (
     <MainContainer>
-      <MainTitle>환영합니다</MainTitle>
-      <MainBottom>
-        <StyledLink to="/about-me">
-          <Button>더 알아보기</Button>
-        </StyledLink>
-      </MainBottom>
+      <MainContentContainter>
+        <MainTitle>환영합니다</MainTitle>
+        <MainBottom>
+          <StyledLink to="/about-me">
+            <TextButton>더 알아보기 &rarr;</TextButton>
+          </StyledLink>
+        </MainBottom>
+      </MainContentContainter>
+      <MainImage src={mainImage}></MainImage>
     </MainContainer>
   );
 };
