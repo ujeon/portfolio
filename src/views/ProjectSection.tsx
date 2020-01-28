@@ -18,10 +18,10 @@ import {
 
 import projectData from "../data/projectData.json";
 
-import uritube_img from "../assets/images/uritube-screenshot.png";
-import secondhand_img from "../assets/images/secondhand-screenshot.png";
-import misinterpreter_img from "../assets/images/misinterpreter-screenshot.png";
-import gdflower_img from "../assets/images/geumhwafood-screenshot.png";
+import uritube_img from "../assets/images/uritube-screenshot-min.png";
+import secondhand_img from "../assets/images/secondhand-screenshot-min.png";
+import misinterpreter_img from "../assets/images/misinterpreter-screenshot-min.png";
+import gdflower_img from "../assets/images/geumhwafood-screenshot-min.png";
 
 interface Images {
   [uritube: string]: string;
