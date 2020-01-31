@@ -9,13 +9,13 @@ export const StyledLink = styled(Link)`
   color: ${Color.color_black}
   font-family: ${Font.font_primary};
 
-  $:link,
-  $:visited {
+  &:link,
+  &:visited {
     color: ${Color.color_black};
   }
   
   &:hover,
-  $:active {
+  &:active {
     text-decoration: none;
     color: ${Color.color_secondary};
   }
