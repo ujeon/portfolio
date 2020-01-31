@@ -1,27 +1,26 @@
-import React from "react";
+import React, { useEffect, useState, useCallback } from "react";
 
 import {
-  TextSmall,
-  SubTitle,
-  ProjectContainer,
-  ProjectHead,
-  Grid,
-  GridItem,
-  ProjectImgContainer,
+  ProjectsSection,
+  ProjectsContainer,
+  Project,
+  ImageContainer,
   ProjectImg,
-  ProjectDescriptions,
-  Description,
-  Icon,
-  ContentBody,
-  Text
-} from "../components/styledComponents";
+  ProjectTitle,
+  IconProject
+} from "../styledComponents/components/_projects";
+
+import { Text } from "../styledComponents/components/_typography";
+import { StyledLink } from "../styledComponents/base/utilities";
+
+import * as Color from "../styledComponents/base/_colors";
 
 import projectData from "../data/projectData.json";
 
-import uritube_img from "../assets/images/uritube-screenshot-min.png";
-import secondhand_img from "../assets/images/secondhand-screenshot-min.png";
-import misinterpreter_img from "../assets/images/misinterpreter-screenshot-min.png";
-import gdflower_img from "../assets/images/geumhwafood-screenshot-min.png";
+import uritube_img from "../assets/images/uritube/uritube-screenshot-min1.png";
+import secondhand_img from "../assets/images/secondhand/secondhand-screenshot-min1.png";
+import misinterpreter_img from "../assets/images/misinterpreter/misinterpreter-screenshot-min1.png";
+import gdflower_img from "../assets/images/gdflower/geumhwafood-screenshot-min1.png";
 
 interface Images {
   [uritube: string]: string;
@@ -38,47 +37,133 @@ const images: Images = {
 };
 
 const ProjectSection: React.FC = () => {
-  const projectList: JSX.Element[] = projectData.map(data => {
-    return (
-      <GridItem key={data.projectName}>
-        <ProjectImgContainer>
-          <a href={data.url}>
-            <ProjectImg src={images[data.image]} alt={data.projectName} />
-          </a>
-        </ProjectImgContainer>
-        <ProjectDescriptions>
-          <Text style={{ textAlign: "center" }}>{data.projectName}</Text>
-          <Description>
-            <Icon
-              className="icon ion-ios-calendar"
-              style={{ marginBottom: "1%" }}
-            ></Icon>
-            <TextSmall>{data.date}</TextSmall>
-          </Description>
-          <Description>
-            <Icon
-              className="icon ion-ios-filing"
-              style={{ marginBottom: "1%" }}
-            />
-            <TextSmall>{data.description}</TextSmall>
-          </Description>
-        </ProjectDescriptions>
-      </GridItem>
-    );
-  });
+  const [leftIndex, setLeftIndex] = useState(0);
+  const [rightIndex, setRightIndex] = useState(0);
+  const leftSide: any[] = [];
+  const rightSide: any[] = [];
+  const devergePoint = projectData.length / 2;
+
+  useEffect(() => {
+    const makeVisible = (num1: number, num2: number) => {
+      window.onscroll = () => {
+        if (
+          leftSide[num1] &&
+          window.pageYOffset + window.innerHeight > leftSide[num1].offsetTop
+        ) {
+          leftSide[num1].classList.add("visible");
+          setLeftIndex(leftIndex + 1);
+        }
+
+        if (
+          rightSide[num2] &&
+          window.pageYOffset + window.innerHeight > rightSide[num2].offsetTop
+        ) {
+          rightSide[num2].classList.add("visible");
+          setRightIndex(rightIndex + 1);
+        }
+      };
+    };
+
+    makeVisible(leftIndex, rightIndex);
+
+    return () => {
+      makeVisible(leftIndex, rightIndex);
+    };
+  }, [leftIndex, rightIndex, leftSide, rightSide]);
+
+  const measuredLeftRef = useCallback(
+    node => {
+      if (node !== null) {
+        leftSide.push(node);
+      }
+    },
+    [leftSide]
+  );
+
+  const measuredRightRef = useCallback(
+    node => {
+      if (node !== null) {
+        rightSide.push(node);
+      }
+    },
+    [rightSide]
+  );
+
+  const projectListLeft: (JSX.Element | undefined)[] = projectData.map(
+    (data, i) => {
+      if (devergePoint > i) {
+        return (
+          <Project ref={measuredLeftRef} key={data.projectName}>
+            <StyledLink to={data.projectName_en}>
+              <ProjectTitle>
+                {data.projectName}
+                <IconProject
+                  color={Color.color_black}
+                  size="2"
+                  className="icon ion-ios-arrow-round-forward"
+                ></IconProject>
+              </ProjectTitle>
+            </StyledLink>
+
+            <Text size="0.8" color={Color.color_grey_light}>
+              {data.roll}
+            </Text>
+
+            <ImageContainer>
+              <ProjectImg
+                src={images[data.image]}
+                alt={data.projectName}
+                width={data.img_width}
+              />
+            </ImageContainer>
+          </Project>
+        );
+      } else {
+        return undefined;
+      }
+    }
+  );
+
+  const projectListRight: (JSX.Element | undefined)[] = projectData.map(
+    (data, i) => {
+      if (devergePoint <= i) {
+        return (
+          <Project ref={measuredRightRef} key={data.projectName}>
+            <ImageContainer>
+              <ProjectImg
+                src={images[data.image]}
+                alt={data.projectName}
+                width={data.img_width}
+              />
+            </ImageContainer>
+
+            <StyledLink to={data.projectName_en}>
+              <ProjectTitle>
+                {data.projectName}{" "}
+                <IconProject
+                  color={Color.color_black}
+                  size="2"
+                  className="icon ion-ios-arrow-round-forward"
+                ></IconProject>
+              </ProjectTitle>
+            </StyledLink>
+
+            <Text size="0.8" color={Color.color_grey_light}>
+              {data.roll}
+            </Text>
+          </Project>
+        );
+      } else {
+        return undefined;
+      }
+    }
+  );
 
   return (
-    <ProjectContainer>
-      <ProjectHead>
-        <SubTitle>프로젝트를 소개합니다.</SubTitle>
-        <Text style={{ textAlign: "center" }}>
-          꾸준하게 프로젝트를 진행하려 노력하고 있습니다.
-        </Text>
-      </ProjectHead>
-      <ContentBody>
-        <Grid>{projectList}</Grid>
-      </ContentBody>
-    </ProjectContainer>
+    <ProjectsSection>
+      <ProjectsContainer>{projectListLeft}</ProjectsContainer>
+      <ProjectsContainer>{projectListRight}</ProjectsContainer>
+    </ProjectsSection>
   );
 };
 

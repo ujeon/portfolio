@@ -1,21 +1,14 @@
 import React from "react";
 import { RouteComponentProps } from "react-router-dom";
-
 import ReactGA from "react-ga";
 
-import {
-  MainContainer,
-  MainTitle,
-  TextButton,
-  MainBottom,
-  StyledLink,
-  MainImage,
-  MainContentContainter
-} from "../components/styledComponents";
+import HeadLine from "../components/HeadLine";
+import ProjectSection from "./ProjectSection";
+import Footer from "../components/Footer";
 
-import mainImage from "../assets/images/han-chenxu-tu_mv6p2p5U-unsplash-min.jpg";
+import { description } from "../data/introduce";
 
-const Main: React.FC<RouteComponentProps> = ({
+const Mainx: React.FC<RouteComponentProps> = ({
   location
 }: RouteComponentProps) => {
   const page = location.pathname;
@@ -23,19 +16,18 @@ const Main: React.FC<RouteComponentProps> = ({
   ReactGA.set({ page });
   ReactGA.pageview(page);
 
+  // const scrollBottom = () => {
+  //   window.scrollTo(0, elFooter.current.offsetTop);
+  // };
   return (
-    <MainContainer>
-      <MainContentContainter>
-        <MainTitle>환영합니다</MainTitle>
-        <MainBottom>
-          <StyledLink to="/about-me">
-            <TextButton>더 알아보기 &rarr;</TextButton>
-          </StyledLink>
-        </MainBottom>
-      </MainContentContainter>
-      <MainImage src={mainImage}></MainImage>
-    </MainContainer>
+    <main>
+      <HeadLine text={description} />
+
+      <ProjectSection />
+
+      <Footer />
+    </main>
   );
 };
 
-export default Main;
+export default Mainx;
