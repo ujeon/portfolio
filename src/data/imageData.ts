@@ -8,8 +8,11 @@ import secondhand3 from "../assets/images/secondhand/secondhand-screenshot-min5.
 import secondhand4 from "../assets/images/secondhand/secondhand-screenshot-min6.png";
 
 import gdflower1 from "../assets/images/gdflower/geumhwafood-screenshot-min1.png";
+import gdflower2 from "../assets/images/gdflower/geumhwafood-screenshot-min2.png";
+import gdflower3 from "../assets/images/gdflower/geumhwafood-screenshot-min3.png";
 
 import misinterpreter1 from "../assets/images/misinterpreter/misinterpreter-screenshot-min1.png";
+import misinterpreter2 from "../assets/images/misinterpreter/misinterpreter-screenshot-min2.png";
 
 interface imageDataType {
   [uritube: string]: string[];
@@ -21,6 +24,6 @@ interface imageDataType {
 export const imageData: imageDataType = {
   uritube: [uritube1, uritube2, uritube3],
   secondhand: [secondhand1, secondhand2, secondhand3, secondhand4],
-  gdflower: [gdflower1],
-  misinterpreter: [misinterpreter1]
+  gdflower: [gdflower1, gdflower2, gdflower3],
+  misinterpreter: [misinterpreter1, misinterpreter2]
 };
