@@ -40,7 +40,10 @@ const Footer: React.FC = () => {
             Blog
           </Text>
         </SocialLink>
-        <SocialLink href="../assets/resume.pdf" target="_blank">
+        <SocialLink
+          href="https://www.dropbox.com/s/kh0yf3dmz2ommxp/%EC%9E%A5%EC%9A%B0%EC%A0%84%20%EC%9D%B4%EB%A0%A5%EC%84%9C.pdf?dl=0"
+          target="_blank"
+        >
           <Text size="1.1" color={Color.color_grey_dark}>
             Resume
           </Text>
