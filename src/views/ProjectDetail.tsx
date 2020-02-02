@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react";
 import { RouteComponentProps } from "react-router-dom";
 
 import HeadLine from "../components/HeadLine";
@@ -25,6 +25,9 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
   const [text, setText] = useState("");
   const [count, setCount] = useState(0);
   const [excuted, setExcuted] = useState(false);
+  const [currentPath, setCurrentPath] = useState(location.pathname);
+
+  const prevCurrentPathRef = useRef("");
 
   const imgNodes: any[] = [];
   const path = location.pathname;
@@ -41,6 +44,14 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
   });
 
   useEffect(() => {
+    setCurrentPath(location.pathname);
+
+    if (currentPath !== prevCurrentPathRef.current) {
+      prevCurrentPathRef.current = currentPath;
+      setCount(0);
+      setExcuted(false);
+    }
+
     const makeVisible = (num: number) => {
       window.onscroll = () => {
         if (
@@ -65,7 +76,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
       makeVisible(count);
       setText(data[0].description);
     };
-  }, [data, count, imgNodes, excuted]);
+  }, [data, count, imgNodes, excuted, currentPath, location.pathname]);
 
   const measuredRef = useCallback(
     node => {

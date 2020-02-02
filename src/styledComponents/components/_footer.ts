@@ -45,33 +45,15 @@ export const SocialIconsContainer = styled.div`
   }
 `;
 
-export const BlogContainer = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-`;
-
-export const IconFooter = styled.i`
-  font-size: 1.5rem;
-  color: ${Color.color_grey_dark};
-
-  &:hover,
-  &:active {
-    color: #ddd;
-  }
-`;
-
 export const SocialLink = styled.a`
   text-decoration: none;
   border: 0;
   font-size: 1.1rem;
-  color: ${Color.color_grey_dark};
-  margin: 0 1% 0 1%
   transition: color 0.2s;
-  
-  &:hover,
-  &:active {
+
+  p {
+    &:hover,
+    &:active {
     color: #ddd;
   }
 
@@ -82,6 +64,28 @@ export const SocialLink = styled.a`
    @media only screen and ${device.mobileL} {
     margin: 2% 4% 2% 4%
    }
+`;
+
+export const AboutMeContainder = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  ${SocialLink} {
+    padding: 0 10px 0 10px;
+  }
+`;
+
+export const IconFooter = styled.i`
+  font-size: 1.5rem;
+  color: ${Color.color_grey_dark};
+  margin: 0 1rem 0 1rem;
+
+  &:hover,
+  &:active {
+    color: #ddd;
+  }
 `;
 
 export const Comment = styled.p`

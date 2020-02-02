@@ -4,7 +4,7 @@ import {
   FooterSection,
   CommentContainer,
   SocialIconsContainer,
-  BlogContainer,
+  AboutMeContainder,
   SocialLink,
   IconFooter,
   Comment
@@ -29,13 +29,23 @@ const Footer: React.FC = () => {
           <IconFooter className="icon ion-ios-mail" />
         </SocialLink>
       </SocialIconsContainer>
-      <BlogContainer>
+      <AboutMeContainder>
+        {/* <SocialLink href="https://medium.com/@wj9304">
+          <Text size="1.1" color={Color.color_grey_dark}>
+            AboutMe
+          </Text>
+        </SocialLink> */}
         <SocialLink href="https://medium.com/@wj9304">
           <Text size="1.1" color={Color.color_grey_dark}>
             Blog
           </Text>
         </SocialLink>
-      </BlogContainer>
+        <SocialLink href="../assets/resume.pdf" target="_blank">
+          <Text size="1.1" color={Color.color_grey_dark}>
+            Resume
+          </Text>
+        </SocialLink>
+      </AboutMeContainder>
     </FooterSection>
   );
 };
