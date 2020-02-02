@@ -64,7 +64,7 @@ export const PrimaryImgSection = styled.section<backgoundColorProps>`
 
 export const PrimaryImgContainer = styled.div`
   opacity: 0;
-  width: 60%;
+  width: 50%;
   margin: 10% 0 10% 0;
 
   img {
@@ -75,7 +75,7 @@ export const PrimaryImgContainer = styled.div`
   }
 
   &.visible {
-    animation: 0.7s ${moveInBottomBig} forwards;
+    animation: 1s ${moveInBottomBig} forwards;
   }
 `;
 
@@ -93,6 +93,7 @@ export const SecondaryImgSection = styled.section<backgoundColorProps>`
 
 export const SecondaryImgContainer = styled.div<widthProps>`
   opacity: 0;
+  max-width: 50%;
   width: ${props => props.width}%;
   margin: 5%;
   box-sizing: border-box;
@@ -105,7 +106,7 @@ export const SecondaryImgContainer = styled.div<widthProps>`
   }
 
   &.visible {
-    animation: 0.7s ${moveInBottomBig} forwards;
+    animation: 1s ${moveInBottomBig} forwards;
   }
 
   @media only screen and ${device.tablet} {
