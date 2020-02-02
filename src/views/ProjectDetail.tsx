@@ -47,8 +47,11 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
     setCurrentPath(location.pathname);
 
     if (currentPath !== prevCurrentPathRef.current) {
-      prevCurrentPathRef.current = currentPath;
       setCount(0);
+      imgNodes.forEach((el, i) => {
+        imgNodes[i].classList.remove("visible");
+      });
+      prevCurrentPathRef.current = currentPath;
       setExcuted(false);
     }
 

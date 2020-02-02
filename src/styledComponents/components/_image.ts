@@ -75,7 +75,17 @@ export const PrimaryImgContainer = styled.div`
   }
 
   &.visible {
-    animation: 1s ${moveInBottomBig} forwards;
+    animation: 1.2s ${moveInBottomBig} forwards;
+  }
+
+  @media only screen and ${device.tablet} {
+    margin: 15%;
+
+    min-width: 80%;
+
+    &.visible {
+      animation: 1.4s ${moveInBottomBig} forwards;
+    }
   }
 `;
 
@@ -106,10 +116,22 @@ export const SecondaryImgContainer = styled.div<widthProps>`
   }
 
   &.visible {
-    animation: 1s ${moveInBottomBig} forwards;
+    animation: 1.2s ${moveInBottomBig} forwards;
   }
 
   @media only screen and ${device.tablet} {
-    width: 60%;
+    &:first-child {
+      margin-top: 15%;
+    }
+
+    &:last-child {
+      margin-bottom: 15%;
+    }
+
+    min-width: 80%;
+
+    &.visible {
+      animation: 1.4s ${moveInBottomBig} forwards;
+    }
   }
 `;
