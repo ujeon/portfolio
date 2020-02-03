@@ -9,10 +9,10 @@
     "date": "2019년 09월",
     "tech_stack": "React / Node.js / AWS",
     "roll": "Back-end",
-    "related_img": "https://images.unsplash.com/photo-1565870100382-f0a510db3cd1?ixlib=rb-1.2.1&auto=format&fit=crop&w=2689&q=80",
     "primary_color": "#96523c",
     "secondary_color": "#dbdddd",
-    "next_project": ["secondhand", "세컨핸드"]
+    "next_project": ["secondhand", "세컨핸드"],
+    "type": "web"
   },
   {
     "projectName": "세컨핸드",
@@ -24,10 +24,10 @@
     "date": "2019년 10월",
     "tech_stack": "React Native / Django / AWS",
     "roll": "Front-end & Back-end",
-    "related_img": "https://images.unsplash.com/photo-1516382686263-779707ed2896?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
     "primary_color": "#6d98a6",
     "secondary_color": "#98b8bb",
-    "next_project": ["gdflower", "금화푸드 재고관리"]
+    "next_project": ["gdflower", "금화푸드 재고관리"],
+    "type": "app"
   },
   {
     "projectName": "금화푸드 재고관리",
@@ -39,10 +39,10 @@
     "date": "2019년 11월 ~",
     "roll": "Front-end & Back-end",
     "tech_stack": "React / GraphQL / AWS",
-    "related_img": "https://images.unsplash.com/photo-1509440159596-0249088772ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1652&q=80",
     "primary_color": "#331809",
     "secondary_color": "#89532b",
-    "next_project": ["misinterpreter", "오역자들"]
+    "next_project": ["misinterpreter", "오역자들"],
+    "type": "web"
   },
   {
     "projectName": "오역자들",
@@ -50,13 +50,13 @@
     "image": "misinterpreter",
     "img_width": "100%",
     "url": "https://misinterpriter.com",
-    "description": "오역자들은 주 1회 영문 기술 블로그를 번역하고, 스터디 동료 간 서로 공유할 수 있는 웹사이트입니다.",
+    "description": "오역자들은 주 1회 영문 기술 블로그를 번역하고, 스터디 동료 간에 서로 공유할 수 있는 웹사이트입니다.",
     "date": "2019년 11월 ~",
     "tech_stack": "React / TypeScript / Netlify",
     "roll": "Article translation and Front-end",
-    "related_img": "https://images.unsplash.com/photo-1453748866136-b1dd97284f49?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1605&q=80",
     "primary_color": "#8d9ab4",
     "secondary_color": "#d2cad0",
-    "next_project": ["uritube", "우리튜브"]
+    "next_project": ["uritube", "우리튜브"],
+    "type": "web"
   }
 ]

@@ -9,7 +9,7 @@ const profileImg = require("../../assets/images/profile.png");
 export const Button = styled.button`
   display: inline-block;
   padding: 15px 30px;
-  font-size: 1rem;
+  font-size: 1.8rem;
   text-decoration: none;
   border-radius: 2px;
   border: 0;
@@ -27,26 +27,13 @@ export const Button = styled.button`
 
   @media only screen and ${device.mobileL} {
     padding: 10px 20px;
-    font-size: 1rem;
-  }
-
-  @media only screen and ${device.mobileM} {
-    padding: 10px 20px;
-    font-size: 1rem;
+    font-size: 1.6rem;
   }
 
   @media only screen and ${device.mobileS} {
     padding: 7px 15px;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
   }
-`;
-
-export const TextButton = styled.div`
-  display: inline-block;
-  padding: 10px 30px;
-  font-size: 1.3rem;
-  text-decoration: none;
-  color: ${Color.color_white};
 `;
 
 export const HomeBtn = styled(Link)`
@@ -55,17 +42,12 @@ export const HomeBtn = styled(Link)`
   background-size:contain;
   box-sizing: border-box;
   display: inline-block
-  width: 3.8rem;
-  height: 3.8rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
   position: fixed;
-  top: 1.1rem;
-  left: 2.1rem;
+  top: 1.7rem;
+  left: 2.3rem;
   z-index:10;
   text-decoration: none;
-
-  @media only screen and ${device.mobileL} {
-    top: 1rem;
-    left: 1rem;
-  }
 `;

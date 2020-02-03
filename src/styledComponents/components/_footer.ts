@@ -48,7 +48,7 @@ export const SocialIconsContainer = styled.div`
 export const SocialLink = styled.a`
   text-decoration: none;
   border: 0;
-  font-size: 1.1rem;
+  
   transition: color 0.2s;
 
   p {
@@ -78,9 +78,8 @@ export const AboutMeContainder = styled.div`
 `;
 
 export const IconFooter = styled.i`
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: ${Color.color_grey_dark};
-  margin: 0 1rem 0 1rem;
 
   &:hover,
   &:active {
@@ -89,8 +88,8 @@ export const IconFooter = styled.i`
 `;
 
 export const Comment = styled.p`
-  font-size: 1.5rem;
   font-family: "Shadows Into Light", cursive;
+  font-size: 2.5rem;
 `;
 
 export const NextProjectContainer = styled.p`
@@ -98,6 +97,7 @@ export const NextProjectContainer = styled.p`
   font-family: ${Font.font_primary};
 
   span {
+    font-size: 1.5rem;
     color: ${Color.color_grey_light};
   }
 `;
