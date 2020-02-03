@@ -4,19 +4,14 @@ import { device } from "../display";
 
 import { moveInBottomBig } from "../base/_animation";
 
-interface imageProps {
-  image: string | undefined;
+interface projectImgProps {
+  width?: string;
+  backgroundColor?: string | undefined;
+  image?: string | undefined;
+  type?: string;
 }
 
-interface backgoundColorProps {
-  backgroundColor: string | undefined;
-}
-
-interface widthProps {
-  width: string;
-}
-
-export const RelatedImgSection = styled.section<imageProps>`
+export const RelatedImgSection = styled.section<projectImgProps>`
   width: 100%;
   height: 70vh;
   background-image: url(${props => props.image});
@@ -53,7 +48,7 @@ export const RelatedImgSection = styled.section<imageProps>`
   }
 `;
 
-export const PrimaryImgSection = styled.section<backgoundColorProps>`
+export const PrimaryImgSection = styled.section<projectImgProps>`
   width: 100%;
   background-color: ${props => props.backgroundColor};
   display: flex;
@@ -62,15 +57,18 @@ export const PrimaryImgSection = styled.section<backgoundColorProps>`
   align-items: center;
 `;
 
-export const PrimaryImgContainer = styled.div`
+export const PrimaryImgContainer = styled.div<projectImgProps>`
   opacity: 0;
-  width: 50%;
+  width: ${props => (props.type === "web" ? "60" : "30")}%;
   margin: 10% 0 10% 0;
 
   img {
     width: 100%;
     margin: 0;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    ${props =>
+      props.type === "web"
+        ? "box-shadow: 0 1.6rem 4.2rem rgba(0, 0, 0, 0.2);"
+        : ""}
     border-radius: 3px;
   }
 
@@ -80,16 +78,15 @@ export const PrimaryImgContainer = styled.div`
 
   @media only screen and ${device.tablet} {
     margin: 15%;
-
     min-width: 80%;
 
     &.visible {
-      animation: 1.4s ${moveInBottomBig} forwards;
+      animation: 1.5s ${moveInBottomBig} forwards;
     }
   }
 `;
 
-export const SecondaryImgSection = styled.section<backgoundColorProps>`
+export const SecondaryImgSection = styled.section<projectImgProps>`
   width: 100%;
   background-color: ${props => props.backgroundColor};
   display: flex;
@@ -101,7 +98,7 @@ export const SecondaryImgSection = styled.section<backgoundColorProps>`
   }
 `;
 
-export const SecondaryImgContainer = styled.div<widthProps>`
+export const SecondaryImgContainer = styled.div<projectImgProps>`
   opacity: 0;
   max-width: 50%;
   width: ${props => props.width}%;
@@ -111,7 +108,10 @@ export const SecondaryImgContainer = styled.div<widthProps>`
   img {
     width: 100%;
     margin: 0;
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    ${props =>
+      props.type === "web"
+        ? "box-shadow: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.2);"
+        : ""}
     border-radius: 3px;
   }
 
@@ -131,7 +131,7 @@ export const SecondaryImgContainer = styled.div<widthProps>`
     min-width: 80%;
 
     &.visible {
-      animation: 1.4s ${moveInBottomBig} forwards;
+      animation: 1.5s ${moveInBottomBig} forwards;
     }
   }
 `;

@@ -96,16 +96,16 @@ const ProjectSection: React.FC = () => {
           <Project ref={measuredLeftRef} key={data.projectName}>
             <StyledLink to={data.projectName_en}>
               <ProjectTitle>
-                {data.projectName}
+                {data.projectName}{" "}
                 <IconProject
                   color={Color.color_black}
-                  size="2"
+                  size="3"
                   className="icon ion-ios-arrow-round-forward"
                 ></IconProject>
               </ProjectTitle>
             </StyledLink>
 
-            <Text size="0.8" color={Color.color_grey_light}>
+            <Text size="1.25" color={Color.color_grey_light}>
               {data.roll}
             </Text>
 
@@ -114,6 +114,7 @@ const ProjectSection: React.FC = () => {
                 src={images[data.image]}
                 alt={data.projectName}
                 width={data.img_width}
+                type={data.type}
               />
             </ImageContainer>
           </Project>
@@ -134,6 +135,7 @@ const ProjectSection: React.FC = () => {
                 src={images[data.image]}
                 alt={data.projectName}
                 width={data.img_width}
+                type={data.type}
               />
             </ImageContainer>
 
@@ -142,13 +144,13 @@ const ProjectSection: React.FC = () => {
                 {data.projectName}{" "}
                 <IconProject
                   color={Color.color_black}
-                  size="2"
+                  size="3.2"
                   className="icon ion-ios-arrow-round-forward"
                 ></IconProject>
               </ProjectTitle>
             </StyledLink>
 
-            <Text size="0.8" color={Color.color_grey_light}>
+            <Text size="1.25" color={Color.color_grey_light}>
               {data.roll}
             </Text>
           </Project>

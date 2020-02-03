@@ -35,6 +35,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
 
   let elPrimaryImg: JSX.Element | undefined;
   let elSecondaryImg: JSX.Element[] | undefined;
+  let relatedImg: string | undefined;
 
   let data = projectData.filter(data => {
     if (data.projectName_en === projectName) {
@@ -92,23 +93,28 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
 
   for (let key in imageData) {
     if (key === projectName) {
+      relatedImg = imageData[key].relatedImg[0];
       elPrimaryImg = (
-        <PrimaryImgContainer ref={measuredRef}>
-          <img src={imageData[key][0]} alt={imageData[key][0]} />
+        <PrimaryImgContainer ref={measuredRef} type={data[0].type}>
+          <img
+            src={imageData[key].projectImg[0]}
+            alt={imageData[key].projectImg[0]}
+          />
         </PrimaryImgContainer>
       );
 
-      let remainImgs = imageData[key].slice(1);
+      let remainImgs = imageData[key].projectImg.slice(1);
 
-      elSecondaryImg = remainImgs.map(data => {
+      elSecondaryImg = remainImgs.map(el => {
         let width = Math.ceil(100 / remainImgs.length);
         return (
           <SecondaryImgContainer
             ref={measuredRef}
             width={width.toString()}
-            key={data}
+            key={el}
+            type={data[0].type}
           >
-            <img src={data} alt={data} />
+            <img src={el} alt={el} />
           </SecondaryImgContainer>
         );
       });
@@ -124,7 +130,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
         date={data[0].date}
         url={data[0].url}
       ></HeadLine>
-      <RelatedImgSection image={data[0].related_img} />
+      <RelatedImgSection image={relatedImg} />
       <PrimaryImgSection backgroundColor={data[0].primary_color}>
         {elPrimaryImg}
       </PrimaryImgSection>

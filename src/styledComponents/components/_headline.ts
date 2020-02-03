@@ -46,7 +46,7 @@ export const HeadLineSection = styled.section`
 
 export const HeadLineTitle = styled.div`
   font-family: ${Font.font_primary};
-  font-size: 3.7rem;
+  font-size: 5.8rem;
   font-weight: 900;
   width: 70%;
   color: ${Color.color_black};
@@ -59,37 +59,37 @@ export const HeadLineTitle = styled.div`
 
   @media only screen and ${device.desktop} {
     width: 71%;
-    font-size: 3.4rem;
+    font-size: 5.3rem;
   }
 
   @media only screen and ${device.laptopL} {
     width: 72%;
-    font-size: 3.1rem;
+    font-size: 4.8rem;
   }
 
   @media only screen and ${device.laptop} {
     width: 73%;
-    font-size: 2.8rem;
+    font-size: 4.3rem;
   }
 
   @media only screen and ${device.tablet} {
     width: 74%;
-    font-size: 2.5rem;
+    font-size: 3.8rem;
   }
 
   @media only screen and ${device.mobileL} {
     width: 75%;
-    font-size: 2.2rem;
+    font-size: 3.3rem;
   }
 
   @media only screen and ${device.mobileM} {
     width: 76%;
-    font-size: 1.9rem;
+    font-size: 2.8rem;
   }
 
   @media only screen and ${device.mobileS} {
     width: 77%;
-    font-size: 1.6rem;
+    font-size: 2.3rem;
   }
 `;
 
@@ -147,7 +147,7 @@ export const ButtonArea = styled.div`
   padding: 0 2.5% 0 2.5%;
 
   @media only screen and ${device.mobileL} {
-    margin-top: 1.3rem;
+    margin-top: 2.7rem;
     padding: 0;
     width: 100%;
   }
@@ -158,7 +158,7 @@ export const Description = styled.div`
 `;
 
 export const DescTitle = styled.h2`
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   font-family: ${Font.font_primary};
   color: ${Color.color_black};
   margin-bottom: 5px;
