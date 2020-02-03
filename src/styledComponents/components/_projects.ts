@@ -7,13 +7,11 @@ import { moveInBottomBig } from "../base/_animation";
 import * as Color from "../base/_colors";
 import * as Font from "../base/_fonts";
 
-interface widthProps {
-  width: string;
-}
-
-interface iconProps {
-  color: string;
-  size: string;
+interface projectProps {
+  width?: string;
+  color?: string;
+  size?: string;
+  type?: string;
 }
 
 export const ProjectsSection = styled.section`
@@ -31,7 +29,7 @@ export const ProjectsSection = styled.section`
 export const ProjectTitle = styled.span`
   display: inline-block;
   font-family: ${Font.font_primary};
-  font-size: 2.1rem;
+  font-size: 3.2rem;
   font-weight: 700;
   padding: 5px;
   margin: 5% 0 1% 0;
@@ -53,28 +51,33 @@ export const ProjectTitle = styled.span`
     display: inline-block;
   }
 
+  &:hover {
+    background-position: 0%;
+    color: ${Color.color_primary};
+  }
+
   @media only screen and ${device.tablet} {
     background-size: 300%;
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   @media only screen and ${device.mobileL} {
     background-size: 290%;
-    font-size: 1.8rem;
+    font-size: 2.8rem;
   }
 
   @media only screen and ${device.mobileM} {
     background-size: 300%;
-    font-size: 1.6rem;
+    font-size: 2.6rem;
   }
 
   @media only screen and ${device.mobileS} {
     background-size: 270%;
-    font-size: 1.4rem;
+    font-size: 2.4rem;
   }
 `;
 
-export const IconProject = styled.i<iconProps>`
+export const IconProject = styled.i<projectProps>`
   font-size: ${props => props.size}rem;
   color: ${props => props.color};
 `;
@@ -98,15 +101,18 @@ export const ImageContainer = styled.div`
   text-align: center;
 `;
 
-export const ProjectImg = styled.img<widthProps>`
+export const ProjectImg = styled.img<projectProps>`
   width: ${props => props.width};
   margin: 0;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  ${props =>
+    props.type === "web"
+      ? "box-shadow: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.2);"
+      : ""}
   border-radius: 3px;
   transition: all 0.5s;
 `;
 
-export const Project = styled.div`
+export const Project = styled.div<projectProps>`
   box-sizing: border-box;
   opacity: 0;
   width: 65%;
@@ -148,7 +154,10 @@ export const Project = styled.div`
       
         & > ${ProjectImg} {
           transform: scale(1.03);
-          box-shadow: 0 1.1rem 2.1rem rgba(0, 0, 0, 0.22);
+          ${props =>
+            props.type === "web"
+              ? "box-shadow: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.2);"
+              : ""}
         }
       
     }
