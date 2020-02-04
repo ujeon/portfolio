@@ -4,11 +4,14 @@ import {
   ProjectsSection,
   ProjectsContainer,
   Project,
-  ImageContainer,
   ProjectImg,
   ProjectTitle,
   IconProject
 } from "../styledComponents/components/_projects";
+import {
+  ImageContainer,
+  BrowserTab
+} from "../styledComponents/components/_image";
 
 import { Text } from "../styledComponents/components/_typography";
 import { StyledLink } from "../styledComponents/base/utilities";
@@ -110,6 +113,12 @@ const ProjectSection: React.FC = () => {
             </Text>
 
             <ImageContainer>
+              <BrowserTab type={data.type}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </BrowserTab>
+
               <ProjectImg
                 src={images[data.image]}
                 alt={data.projectName}
@@ -131,6 +140,11 @@ const ProjectSection: React.FC = () => {
         return (
           <Project ref={measuredRightRef} key={data.projectName}>
             <ImageContainer>
+              <BrowserTab type={data.type}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </BrowserTab>
               <ProjectImg
                 src={images[data.image]}
                 alt={data.projectName}
@@ -149,7 +163,6 @@ const ProjectSection: React.FC = () => {
                 ></IconProject>
               </ProjectTitle>
             </StyledLink>
-
             <Text size="1.25" color={Color.color_grey_light}>
               {data.roll}
             </Text>
