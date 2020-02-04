@@ -15,4 +15,5 @@ body {
   color: #555;
   font-family: 'Nanum Gothic', sans-serif;
   font-weight: 300;
+  -webkit-font-smoothing: antialiased;
 }

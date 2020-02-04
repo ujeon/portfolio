@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
 import { RouteComponentProps } from "react-router-dom";
 
+import ReactGA from "react-ga";
+
 import HeadLine from "../components/HeadLine";
 
 import {
@@ -8,7 +10,9 @@ import {
   PrimaryImgSection,
   PrimaryImgContainer,
   SecondaryImgSection,
-  SecondaryImgContainer
+  SecondaryImgContainer,
+  ImageContainer,
+  BrowserTab
 } from "../styledComponents/components/_image";
 import {
   FooterSection,
@@ -22,6 +26,11 @@ import { imageData } from "../data/imageData";
 const ProjectDetail: React.FC<RouteComponentProps> = ({
   location
 }: RouteComponentProps) => {
+  const page = location.pathname;
+
+  ReactGA.set({ page });
+  ReactGA.pageview(page);
+
   const [text, setText] = useState("");
   const [count, setCount] = useState(0);
   const [excuted, setExcuted] = useState(false);
@@ -96,10 +105,17 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
       relatedImg = imageData[key].relatedImg[0];
       elPrimaryImg = (
         <PrimaryImgContainer ref={measuredRef} type={data[0].type}>
-          <img
-            src={imageData[key].projectImg[0]}
-            alt={imageData[key].projectImg[0]}
-          />
+          <ImageContainer>
+            <BrowserTab type={data[0].type}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </BrowserTab>
+            <img
+              src={imageData[key].projectImg[0]}
+              alt={imageData[key].projectImg[0]}
+            />
+          </ImageContainer>
         </PrimaryImgContainer>
       );
 
@@ -114,7 +130,14 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
             key={el}
             type={data[0].type}
           >
-            <img src={el} alt={el} />
+            <ImageContainer>
+              <BrowserTab type={data[0].type}>
+                <span></span>
+                <span></span>
+                <span></span>
+              </BrowserTab>
+              <img src={el} alt={el} />
+            </ImageContainer>
           </SecondaryImgContainer>
         );
       });
