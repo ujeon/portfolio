@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { device } from "../display";
+import { device } from "../../data/display";
 
 import * as Color from "../base/_colors";
 import * as Font from "../base/_fonts";

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { RouteComponentProps } from "react-router-dom";
 import ReactGA from "react-ga";
 
@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 
 import { description } from "../data/introduce";
 
-const Mainx: React.FC<RouteComponentProps> = ({
+const Main: React.FC<RouteComponentProps> = ({
   location
 }: RouteComponentProps) => {
   const page = location.pathname;
@@ -16,9 +16,10 @@ const Mainx: React.FC<RouteComponentProps> = ({
   ReactGA.set({ page });
   ReactGA.pageview(page);
 
-  // const scrollBottom = () => {
-  //   window.scrollTo(0, elFooter.current.offsetTop);
-  // };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <main>
       <HeadLine text={description} />
@@ -30,4 +31,4 @@ const Mainx: React.FC<RouteComponentProps> = ({
   );
 };
 
-export default Mainx;
+export default Main;

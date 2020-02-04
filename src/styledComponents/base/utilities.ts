@@ -9,6 +9,7 @@ export const StyledLink = styled(Link)`
   color: ${Color.color_black}
   font-family: ${Font.font_primary};
   font-size: 1.5rem;
+  
 
   &:link,
   &:visited {
