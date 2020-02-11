@@ -1,24 +1,29 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+// import { device } from "../../data/display";
+
 import * as Color from "../base/_colors";
-import * as Font from "../base/_fonts";
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: ${Color.color_black}
-  font-family: ${Font.font_primary};
-  font-size: 1.5rem;
-  
+  transition: color 0.2s;
 
-  &:link,
-  &:visited {
-    color: ${Color.color_black};
+  p {
+    display: inline-block;
+    &:hover,
+    &:active {
+    color: ${Color.color_secondary};
   }
-  
-  &:hover,
-  &:active {
-    text-decoration: none;
+`;
+
+export const SocialLink = styled.a`
+  text-decoration: none;
+  transition: color 0.2s;
+
+  p {
+    &:hover,
+    &:active {
     color: ${Color.color_secondary};
   }
 `;

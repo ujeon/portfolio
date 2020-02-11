@@ -19,6 +19,8 @@ import {
   NextProjectContainer
 } from "../styledComponents/components/_footer";
 import { StyledLink } from "../styledComponents/base/utilities";
+import { Text } from "../styledComponents/components/_typography";
+import * as Color from "../styledComponents/base/_colors";
 
 import projectData from "../data/projectData.json";
 import { imageData } from "../data/imageData";
@@ -31,9 +33,9 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
   ReactGA.set({ page });
   ReactGA.pageview(page);
 
-  const [text, setText] = useState("");
   const [count, setCount] = useState(0);
   const [excuted, setExcuted] = useState(false);
+  const [isImagesViewed, setIsImagesViewed] = useState(false);
   const [currentPath, setCurrentPath] = useState(location.pathname);
 
   const prevCurrentPathRef = useRef("");
@@ -58,38 +60,52 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
 
     if (currentPath !== prevCurrentPathRef.current) {
       setCount(0);
-      imgNodes.forEach((el, i) => {
-        imgNodes[i].classList.remove("visible");
+      imgNodes.forEach(el => {
+        el.classList.remove("visible");
       });
       prevCurrentPathRef.current = currentPath;
       setExcuted(false);
+      setIsImagesViewed(false);
     }
-
-    const makeVisible = (num: number) => {
-      window.onscroll = () => {
-        if (
-          imgNodes[num] &&
-          window.pageYOffset + window.innerHeight > imgNodes[num].offsetTop
-        ) {
-          imgNodes[num].classList.add("visible");
-          setCount(count + 1);
-        }
-      };
-    };
 
     if (excuted === false) {
       window.scrollTo(0, 0);
       setExcuted(true);
     }
 
-    makeVisible(count);
-    setText(data[0].description);
+    const viewImages = () => {
+      if (!imgNodes[imgNodes.length - 1].classList.value.includes("visible")) {
+        imgNodes.forEach(el => {
+          if (
+            el.offsetTop &&
+            window.pageYOffset + window.innerHeight > el.offsetTop
+          ) {
+            el.classList.add("visible");
+          }
+        });
+      } else {
+        setIsImagesViewed(true);
+      }
+    };
+
+    if (!isImagesViewed) {
+      window.addEventListener("scroll", viewImages);
+    } else {
+      window.removeEventListener("scroll", viewImages);
+    }
 
     return () => {
-      makeVisible(count);
-      setText(data[0].description);
+      window.removeEventListener("scroll", viewImages);
     };
-  }, [data, count, imgNodes, excuted, currentPath, location.pathname]);
+  }, [
+    data,
+    count,
+    imgNodes,
+    excuted,
+    currentPath,
+    location.pathname,
+    isImagesViewed
+  ]);
 
   const measuredRef = useCallback(
     node => {
@@ -148,7 +164,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
   return (
     <div>
       <HeadLine
-        text={text}
+        text={data[0].description}
         tech_stack={data[0].tech_stack}
         date={data[0].date}
         url={data[0].url}
@@ -162,10 +178,11 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
       </SecondaryImgSection>
       <FooterSection>
         <NextProjectContainer>
-          <span>다음은,</span>
+          <span>다음은,&nbsp;</span>
           <StyledLink to={data[0].next_project[0]}>
-            {" "}
-            {data[0].next_project[1]} &rarr;
+            <Text size="1.5" color={Color.color_black}>
+              {data[0].next_project[1]} &rarr;
+            </Text>
           </StyledLink>
         </NextProjectContainer>
       </FooterSection>

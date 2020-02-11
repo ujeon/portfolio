@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 
 import {
   HeadLineSection,
@@ -23,6 +23,7 @@ type Props = {
 };
 
 const HeadLine: React.FC<Props> = props => {
+  const dividedText = props.text.split("*");
   const elHeadLine = useRef(document.createElement("div"));
   let elDescription: JSX.Element | undefined;
   let elButton: JSX.Element | undefined;
@@ -31,10 +32,10 @@ const HeadLine: React.FC<Props> = props => {
     elButton = (
       <a href={props.url}>
         <Button>
-          더 알아보기{"  "}
+          더 알아보기&nbsp;
           <IconProject
             color={Color.color_white}
-            size="1.1"
+            size="1.7"
             className="icon ion-ios-arrow-round-forward"
           ></IconProject>
         </Button>
@@ -64,13 +65,13 @@ const HeadLine: React.FC<Props> = props => {
     );
   }
 
-  useEffect(() => {
-    elHeadLine.current.innerHTML = props.text;
-  });
-
   return (
     <HeadLineSection>
-      <HeadLineTitle ref={elHeadLine}>{props.text}</HeadLineTitle>
+      <HeadLineTitle ref={elHeadLine}>
+        {dividedText[0]}
+        <span>{dividedText[1]}</span>
+        {dividedText[2]}
+      </HeadLineTitle>
       {elDescription}
     </HeadLineSection>
   );
