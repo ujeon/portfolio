@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import { device } from "../../data/display";
 
+import { SocialLink, StyledLink } from "../base/utilities";
+
 import * as Color from "../base/_colors";
 import * as Font from "../base/_fonts";
 
@@ -45,34 +47,13 @@ export const SocialIconsContainer = styled.div`
   }
 `;
 
-export const SocialLink = styled.a`
-  text-decoration: none;
-  border: 0;
-  
-  transition: color 0.2s;
-
-  p {
-    &:hover,
-    &:active {
-    color: #ddd;
-  }
-
-  @media only screen and ${device.tablet} {
-    margin: 0 2% 0 2%
-   }
- 
-   @media only screen and ${device.mobileL} {
-    margin: 2% 4% 2% 4%
-   }
-`;
-
 export const AboutMeContainder = styled.div`
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: flex-start;
 
-  ${SocialLink} {
+  ${SocialLink}, ${StyledLink} {
     padding: 0 10px 0 10px;
   }
 `;
@@ -80,10 +61,11 @@ export const AboutMeContainder = styled.div`
 export const IconFooter = styled.i`
   font-size: 2.5rem;
   color: ${Color.color_grey_dark};
+  padding: 0 1rem 0 1rem;
 
   &:hover,
   &:active {
-    color: #ddd;
+    color: ${Color.color_secondary};
   }
 `;
 
@@ -92,7 +74,7 @@ export const Comment = styled.p`
   font-size: 2.5rem;
 `;
 
-export const NextProjectContainer = styled.p`
+export const NextProjectContainer = styled.span`
   color: ${Color.color_black}
   font-family: ${Font.font_primary};
 

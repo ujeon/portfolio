@@ -18,6 +18,8 @@ import misinterpreter1 from "../assets/images/misinterpreter/misinterpreter-scre
 import misinterpreter2 from "../assets/images/misinterpreter/misinterpreter-screenshot-min2.png";
 import misinterpreterRelated from "../assets/images/misinterpreter/photo-1453748866136-b1dd97284f49-min.jpeg";
 
+import ujeon_half from "../assets/images/ujeon_half.png";
+
 interface imageDataType {
   [uritube: string]: {
     [projectImg: string]: string[];
@@ -26,6 +28,10 @@ interface imageDataType {
   secondhand: { projectImg: string[]; relatedImg: string[] };
   gdflower: { projectImg: string[]; relatedImg: string[] };
   misinterpreter: { projectImg: string[]; relatedImg: string[] };
+}
+
+interface profileImgType {
+  ujeon_half: string;
 }
 
 export const imageData: imageDataType = {
@@ -45,4 +51,8 @@ export const imageData: imageDataType = {
     projectImg: [misinterpreter1, misinterpreter2],
     relatedImg: [misinterpreterRelated]
   }
+};
+
+export const profileImgData: profileImgType = {
+  ujeon_half: ujeon_half
 };

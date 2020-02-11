@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useCallback } from "react";
 
 import {
   ProjectsSection,
@@ -40,56 +40,36 @@ const images: Images = {
 };
 
 const ProjectSection: React.FC = () => {
-  const [leftIndex, setLeftIndex] = useState(0);
-  const [rightIndex, setRightIndex] = useState(0);
-  const leftSide: any[] = [];
-  const rightSide: any[] = [];
+  const imageNodes: any[] = [];
+
   const devergePoint = projectData.length / 2;
 
   useEffect(() => {
-    const makeVisible = (num1: number, num2: number) => {
-      window.onscroll = () => {
+    const viewImages = () => {
+      imageNodes.forEach(el => {
         if (
-          leftSide[num1] &&
-          window.pageYOffset + window.innerHeight > leftSide[num1].offsetTop
+          el.offsetTop &&
+          window.pageYOffset + window.innerHeight > el.offsetTop + 100
         ) {
-          leftSide[num1].classList.add("visible");
-          setLeftIndex(leftIndex + 1);
+          el.classList.add("visible");
         }
-
-        if (
-          rightSide[num2] &&
-          window.pageYOffset + window.innerHeight > rightSide[num2].offsetTop
-        ) {
-          rightSide[num2].classList.add("visible");
-          setRightIndex(rightIndex + 1);
-        }
-      };
+      });
     };
 
-    makeVisible(leftIndex, rightIndex);
+    window.addEventListener("scroll", viewImages);
 
     return () => {
-      makeVisible(leftIndex, rightIndex);
+      window.removeEventListener("scroll", viewImages);
     };
-  }, [leftIndex, rightIndex, leftSide, rightSide]);
+  }, [imageNodes]);
 
   const measuredLeftRef = useCallback(
     node => {
       if (node !== null) {
-        leftSide.push(node);
+        imageNodes.push(node);
       }
     },
-    [leftSide]
-  );
-
-  const measuredRightRef = useCallback(
-    node => {
-      if (node !== null) {
-        rightSide.push(node);
-      }
-    },
-    [rightSide]
+    [imageNodes]
   );
 
   const projectListLeft: (JSX.Element | undefined)[] = projectData.map(
@@ -138,7 +118,7 @@ const ProjectSection: React.FC = () => {
     (data, i) => {
       if (devergePoint <= i) {
         return (
-          <Project ref={measuredRightRef} key={data.projectName}>
+          <Project ref={measuredLeftRef} key={data.projectName}>
             <ImageContainer>
               <BrowserTab type={data.type}>
                 <span></span>
