@@ -5,14 +5,18 @@ import {
   CommentContainer,
   SocialIconsContainer,
   AboutMeContainder,
-  SocialLink,
   IconFooter,
   Comment
 } from "../styledComponents/components/_footer";
 import { Text } from "../styledComponents/components/_typography";
+import { StyledLink, SocialLink } from "../styledComponents/base/utilities";
 import * as Color from "../styledComponents/base/_colors";
 
-const Footer: React.FC = () => {
+type FooterProps = {
+  path?: string;
+};
+
+const Footer: React.FC<FooterProps> = props => {
   return (
     <FooterSection>
       <CommentContainer>
@@ -30,11 +34,14 @@ const Footer: React.FC = () => {
         </SocialLink>
       </SocialIconsContainer>
       <AboutMeContainder>
-        {/* <SocialLink href="https://medium.com/@wj9304">
-          <Text size="1.1" color={Color.color_grey_dark}>
-            AboutMe
-          </Text>
-        </SocialLink> */}
+        {props.path !== "/about-me" && (
+          <StyledLink to="about-me">
+            <Text size="1.6" color={Color.color_grey_dark}>
+              About me
+            </Text>
+          </StyledLink>
+        )}
+
         <SocialLink href="https://medium.com/@wj9304">
           <Text size="1.6" color={Color.color_grey_dark}>
             Blog

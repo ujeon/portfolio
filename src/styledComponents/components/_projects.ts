@@ -142,9 +142,8 @@ export const Project = styled.div<projectProps>`
     & > ${ImageContainer} {
       transform: scale(1.03);
       ${props =>
-        props.type === "web"
-          ? "box-shadow: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.2);"
-          : ""}
+        props.type === "web" &&
+        "box-shadow: 0 1.6rem 3.2rem rgba(0, 0, 0, 0.2);"}
     }
   }
 `;
