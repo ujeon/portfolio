@@ -31,7 +31,7 @@ export const HeaderSection = styled.section`
 export const Name = styled.h1<Props>`
   font-family: ${Font.font_primary};
   font-weight: 400;
-  font-size: 18rem;
+  font-size: 16rem;
   color: ${Color.color_black}
   text-transform: uppercase;
   line-height: 100%;
@@ -51,6 +51,7 @@ export const Name = styled.h1<Props>`
 
   @media only screen and ${device.mobileL} {
     font-size: 8rem;
+    font-weight: 500;
     text-align: center;
     color:${Color.color_white}
   }
@@ -89,29 +90,28 @@ export const IntroSection = styled.section`
 
   @media only screen and ${device.laptop} {
     img {
-      top: 55%;
+      top: 50%;
       left: 32%;
     }
   }
 
   @media only screen and ${device.tablet} {
-    height: 130vh;
+    height: 120vh;
 
     img {
       width: 47%;
-      top: 55%;
+      top: 60%;
       left: 25%;
     }
   }
 
   @media only screen and ${device.mobileL} {
-    height: 150vh;
+    height: 170vh;
 
     img {
       width: 80%;
+      top: 63%;
       left: 13%;
-
-      top: 64%;
     }
   }
 `;
@@ -218,6 +218,10 @@ export const FeaturesSection = styled.section`
   height: 100vh;
   position: relative;
   background-color: #eee;
+
+  @media only screen and ${device.mobileL} {
+    height: 125vh;
+  }
 `;
 
 export const FeaturesList = styled.ul`

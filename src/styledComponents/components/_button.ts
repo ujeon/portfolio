@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import { device } from "../../data/display";
 import * as Color from "../base/_colors";
 
+interface ButtonProps {
+  fontSize: number;
+}
+
 export const Button = styled.button`
   display: inline-block;
   padding: 15px 30px;
@@ -36,27 +40,21 @@ export const Button = styled.button`
 
 export const HomeBtn = styled(Link)`
   box-sizing: border-box;
-  display: inline-block
-  width: 6rem;
-  height: 6rem;
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
   border-radius: 50%;
   overflow: hidden;
-  position: fixed;
-  top: 1.7rem;
-  left: 2.3rem;
-  z-index:10;
   text-decoration: none;
 
   img {
     width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    height: 100%;
+    border-radius: 50%;
     transition: transform 0.3s;
 
     &:hover {
-      transform: scale(1.04) translate(-50%, -50%);
+      transform: scale(1.05);
     }
   }
 `;

@@ -69,6 +69,12 @@ export const IconFooter = styled.i`
   }
 `;
 
+export const ContactMeContainer = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+`;
+
 export const Comment = styled.p`
   font-family: "Shadows Into Light", cursive;
   font-size: 2.5rem;

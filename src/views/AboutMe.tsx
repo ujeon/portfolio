@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { RouteComponentProps } from "react-router-dom";
 
 import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 
 import {
   HeaderSection,
@@ -190,6 +191,7 @@ const AboutMe: React.FC<RouteComponentProps> = ({
 
   return (
     <main>
+      <NavBar pathname={location.pathname} />
       <HeaderSection>
         <Name>
           <span ref={elName}>Jang Ujeon</span>
@@ -227,7 +229,7 @@ const AboutMe: React.FC<RouteComponentProps> = ({
         </FeatureContainer>
       </FeaturesSection>
 
-      <Footer path={location.pathname} />
+      <Footer />
     </main>
   );
 };
