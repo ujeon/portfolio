@@ -6,22 +6,20 @@ import {
   SocialIconsContainer,
   AboutMeContainder,
   IconFooter,
-  Comment
+  Comment,
+  ContactMeContainer
 } from "../styledComponents/components/_footer";
 import { Text } from "../styledComponents/components/_typography";
-import { StyledLink, SocialLink } from "../styledComponents/base/utilities";
+import { SocialLink } from "../styledComponents/base/utilities";
 import * as Color from "../styledComponents/base/_colors";
 
-type FooterProps = {
-  path?: string;
-};
-
-const Footer: React.FC<FooterProps> = props => {
+const Footer: React.FC = () => {
   return (
     <FooterSection>
       <CommentContainer>
         <Comment>Have a nice day :)</Comment>
       </CommentContainer>
+
       <SocialIconsContainer>
         <SocialLink href="https://github.com/ujeon?tab=repositories">
           <IconFooter className="icon ion-logo-github" />
@@ -33,15 +31,8 @@ const Footer: React.FC<FooterProps> = props => {
           <IconFooter className="icon ion-ios-mail" />
         </SocialLink>
       </SocialIconsContainer>
-      <AboutMeContainder>
-        {props.path !== "/about-me" && (
-          <StyledLink to="about-me">
-            <Text size="1.6" color={Color.color_grey_dark}>
-              About me
-            </Text>
-          </StyledLink>
-        )}
 
+      <AboutMeContainder>
         <SocialLink href="https://medium.com/@wj9304">
           <Text size="1.6" color={Color.color_grey_dark}>
             Blog
@@ -56,6 +47,14 @@ const Footer: React.FC<FooterProps> = props => {
           </Text>
         </SocialLink>
       </AboutMeContainder>
+
+      <ContactMeContainer>
+        <SocialLink href="tel:+8201091126563">
+          <Text size="1.6" color={Color.color_grey_dark}>
+            +82 10-9112-6563
+          </Text>
+        </SocialLink>
+      </ContactMeContainer>
     </FooterSection>
   );
 };

@@ -1,4 +1,5 @@
 import { keyframes } from "styled-components";
+import * as Color from "../base/_colors";
 
 export const moveInBottomBig = keyframes`
   0% {
@@ -35,5 +36,18 @@ export const moveCharInBottomSmall = keyframes`
     opacity: 1;
     transform: matrix(1,0,0,1,0,0);
     transform-origin: center;
+  }
+`;
+
+export const LeftToRight = keyframes`
+  0% {
+    opacity: 0;
+    border: 1px solid ${Color.color_secondary};
+  }
+
+ 
+  100% {
+    opacity: 1;
+    border: 1px solid ${Color.color_secondary};
   }
 `;

@@ -5,6 +5,7 @@ import ReactGA from "react-ga";
 import HeadLine from "../components/HeadLine";
 import ProjectSection from "./ProjectSection";
 import Footer from "../components/Footer";
+import NavBar from "../components/NavBar";
 
 import { description } from "../data/introduce";
 
@@ -22,6 +23,8 @@ const Main: React.FC<RouteComponentProps> = ({
 
   return (
     <main>
+      <NavBar pathname={location.pathname} />
+
       <HeadLine text={description} />
 
       <ProjectSection />
