@@ -3,6 +3,7 @@ import { RouteComponentProps } from "react-router-dom";
 
 import ReactGA from "react-ga";
 
+import NavBar from "../components/NavBar";
 import HeadLine from "../components/HeadLine";
 
 import {
@@ -20,15 +21,16 @@ import {
 } from "../styledComponents/components/_footer";
 import { StyledLink } from "../styledComponents/base/utilities";
 import { Text } from "../styledComponents/components/_typography";
+
 import * as Color from "../styledComponents/base/_colors";
 
 import projectData from "../data/projectData.json";
 import { imageData } from "../data/imageData";
 
-const ProjectDetail: React.FC<RouteComponentProps> = ({
-  location
-}: RouteComponentProps) => {
-  const page = location.pathname;
+const ProjectDetail: React.FC<RouteComponentProps> = (
+  props: RouteComponentProps
+) => {
+  const page = props.location.pathname;
 
   ReactGA.set({ page });
   ReactGA.pageview(page);
@@ -36,12 +38,12 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
   const [count, setCount] = useState(0);
   const [excuted, setExcuted] = useState(false);
   const [isImagesViewed, setIsImagesViewed] = useState(false);
-  const [currentPath, setCurrentPath] = useState(location.pathname);
+  const [currentPath, setCurrentPath] = useState(props.location.pathname);
 
   const prevCurrentPathRef = useRef("");
 
   const imgNodes: any[] = [];
-  const path = location.pathname;
+  const path = props.location.pathname;
   const projectName = path.split("/")[1];
 
   let elPrimaryImg: JSX.Element | undefined;
@@ -56,7 +58,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
   });
 
   useEffect(() => {
-    setCurrentPath(location.pathname);
+    setCurrentPath(props.location.pathname);
 
     if (currentPath !== prevCurrentPathRef.current) {
       setCount(0);
@@ -103,7 +105,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
     imgNodes,
     excuted,
     currentPath,
-    location.pathname,
+    props.location.pathname,
     isImagesViewed
   ]);
 
@@ -162,7 +164,9 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
   }
 
   return (
-    <div>
+    <main>
+      <NavBar pathname={props.location.pathname} back={props.history.goBack} />
+
       <HeadLine
         text={data[0].description}
         tech_stack={data[0].tech_stack}
@@ -186,7 +190,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = ({
           </StyledLink>
         </NextProjectContainer>
       </FooterSection>
-    </div>
+    </main>
   );
 };
 export default ProjectDetail;
