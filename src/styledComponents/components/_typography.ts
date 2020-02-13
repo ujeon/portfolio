@@ -5,16 +5,26 @@ import { device } from "../../data/display";
 export const SubTitle = styled.h2``;
 
 interface Props {
-  size: string;
   color: string;
 }
 
 export const Text = styled.p<Props>`
-  font-size: ${props => props.size + "rem"};
-  color: ${props => props.color}
-  line-height: 170%;
+  font-size: 1.8rem;
+  color: ${props => props.color};
 
-  @media only screen and ${device.mobileL} {
-    font-size: ${props => Number(props.size) - 0.1 + "rem"};
+  @media only screen and ${device.desktop} {
+    font-size: 1.6rem;
+  }
+
+  @media only screen and ${device.tabletLandscape} {
+    font-size: 2rem;
+  }
+
+  @media only screen and ${device.tabletPortrait} {
+    font-size: 2.2rem;
+  }
+
+  @media only screen and ${device.phone} {
+    font-size: 2rem;
   }
 `;

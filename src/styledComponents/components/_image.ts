@@ -29,8 +29,6 @@ export const BrowserTab = styled.span<projectImgProps>`
     display: inline-block;
     margin: 10px 0 0 5px;
     ${props => props.type === "web" && "width: 10px; height: 10px;"}
-    // width: 10px;
-    // height: 10px;
     border-radius: 50%;
     background-color: #dce1e6;
   }
@@ -38,38 +36,18 @@ export const BrowserTab = styled.span<projectImgProps>`
 
 export const RelatedImgSection = styled.section<projectImgProps>`
   width: 100%;
-  height: 70vh;
+  height: 90vh;
   background-image: url(${props => props.image});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0, 10%;
 
-  @media only screen and ${device.desktop} {
-    height: 65vh;
-  }
-
-  @media only screen and ${device.laptopL} {
-    height: 60vh;
-  }
-
-  @media only screen and ${device.laptop} {
-    height: 55vh;
-  }
-
-  @media only screen and ${device.tablet} {
+  @media only screen and ${device.tabletPortrait} {
     height: 50vh;
   }
 
-  @media only screen and ${device.mobileL} {
-    height: 45vh;
-  }
-
-  @media only screen and ${device.mobileM} {
+  @media only screen and ${device.phone} {
     height: 40vh;
-  }
-
-  @media only screen and ${device.mobileS} {
-    height: 35vh;
   }
 `;
 
@@ -101,13 +79,14 @@ export const PrimaryImgContainer = styled.div<projectImgProps>`
     animation: 1.2s ${moveInBottomBig} forwards;
   }
 
-  @media only screen and ${device.tablet} {
-    margin: 15%;
-    min-width: 90%;
+  @media only screen and ${device.tabletLandscape} {
+    margin: 15% 0%;
+    min-width: 70%;
+  }
 
-    &.visible {
-      animation: 1.5s ${moveInBottomBig} forwards;
-    }
+  @media only screen and ${device.tabletPortrait} {
+    margin: 20% 0%;
+    min-width: 90%;
   }
 `;
 
@@ -118,7 +97,7 @@ export const SecondaryImgSection = styled.section<projectImgProps>`
   justify-content: space-around;
   align-items: center;
 
-  @media only screen and ${device.tablet} {
+  @media only screen and ${device.tabletLandscape} {
     flex-direction: column;
   }
 `;
@@ -144,8 +123,9 @@ export const SecondaryImgContainer = styled.div<projectImgProps>`
     animation: 1.2s ${moveInBottomBig} forwards;
   }
 
-  @media only screen and ${device.tablet} {
-    min-width: 90%;
+  @media only screen and ${device.tabletLandscape} {
+    min-width: 70%;
+    margin: 7.5% 0%;
 
     &:first-child {
       margin-top: 15%;
@@ -153,6 +133,23 @@ export const SecondaryImgContainer = styled.div<projectImgProps>`
 
     &:last-child {
       margin-bottom: 15%;
+    }
+
+    &.visible {
+      animation: 1.5s ${moveInBottomBig} forwards;
+    }
+  }
+
+  @media only screen and ${device.tabletPortrait} {
+    min-width: 90%;
+    margin: 10% 0%;
+
+    &:first-child {
+      margin-top: 20%;
+    }
+
+    &:last-child {
+      margin-bottom: 20%;
     }
 
     &.visible {

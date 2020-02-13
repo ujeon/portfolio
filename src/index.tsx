@@ -5,7 +5,7 @@ import { HashRouter } from "react-router-dom";
 
 import App from "./App";
 
-import "./css/reset.css";
+import "./css/style.css";
 require("dotenv").config();
 
 ReactDOM.render(

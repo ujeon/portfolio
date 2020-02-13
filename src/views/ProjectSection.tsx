@@ -88,9 +88,7 @@ const ProjectSection: React.FC = () => {
               </ProjectTitle>
             </StyledLink>
 
-            <Text size="1.25" color={Color.color_grey_light}>
-              {data.roll}
-            </Text>
+            <Text color={Color.color_grey_light}>{data.roll}</Text>
 
             <ImageContainer>
               <BrowserTab type={data.type}>
@@ -143,9 +141,7 @@ const ProjectSection: React.FC = () => {
                 ></IconProject>
               </ProjectTitle>
             </StyledLink>
-            <Text size="1.25" color={Color.color_grey_light}>
-              {data.roll}
-            </Text>
+            <Text color={Color.color_grey_light}>{data.roll}</Text>
           </Project>
         );
       } else {
