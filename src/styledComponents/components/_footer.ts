@@ -17,11 +17,6 @@ export const FooterSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items:center;
-
-  @media only screen and ${device.tablet} {
-   height: 40vh;
-  }
-
 `;
 
 export const CommentContainer = styled.div`
@@ -32,18 +27,18 @@ export const CommentContainer = styled.div`
 `;
 
 export const SocialIconsContainer = styled.div`
-  width: 15%;
+  width: 20%;
   flex: 1;
   display: flex;
   justify-content: space-around;
   align-items: center;
 
-  @media only screen and ${device.tablet} {
+  @media only screen and ${device.tabletLandscape} {
     width: 25%;
   }
 
-  @media only screen and ${device.mobileL} {
-    width: 35%;
+  @media only screen and ${device.tabletPortrait} {
+    width: 40%;
   }
 `;
 

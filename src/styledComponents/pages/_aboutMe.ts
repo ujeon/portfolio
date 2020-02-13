@@ -22,16 +22,16 @@ export const HeaderSection = styled.section`
   background-size: contain;
   background-position: right;
 
-  @media only screen and ${device.mobileL} {
+  @media only screen and ${device.tabletPortrait} {
     background-size: cover;
-    background-position: bottom;
+    background-position: center;
   }
 `;
 
 export const Name = styled.h1<Props>`
   font-family: ${Font.font_primary};
   font-weight: 400;
-  font-size: 16rem;
+  font-size: 14rem;
   color: ${Color.color_black}
   text-transform: uppercase;
   line-height: 100%;
@@ -49,7 +49,23 @@ export const Name = styled.h1<Props>`
     transition: transform 1.1s; 
   }
 
-  @media only screen and ${device.mobileL} {
+  @media only screen and ${device.desktop} {
+    font-size: 16rem;
+  }
+
+  @media only screen and ${device.tabletLandscape} {
+    font-size: 12rem;
+    font-weight: 500;
+  }
+
+  @media only screen and ${device.tabletPortrait} {
+    font-size: 10rem;
+    font-weight: 500;
+    text-align: center;
+    color:${Color.color_white}
+  }
+
+  @media only screen and ${device.phone} {
     font-size: 8rem;
     font-weight: 500;
     text-align: center;
@@ -59,58 +75,61 @@ export const Name = styled.h1<Props>`
 
 export const IntroSection = styled.section`
   width: 100%;
-  height: 100vh;
+  height: 140vh;
   position: relative;
   overflow: hidden;
   background-color: #f5f5f5;
 
   img {
     opacity: 0;
-    width: 25%;
+    width: 50%;
     position: absolute;
-    top: 37%;
-    left: 38%;
+    top: 35%;
+    left: 25%;
 
     &.visible {
       animation-timing: ease-in-out;
       animation: 1s ${moveInBottomSmall} forwards;
-      animation-delay: 1s;
+      animation-delay: 1.1s;
     }
   }
 
-  @media only screen and ${device.laptopL} {
+  @media only screen and ${device.desktop} {
     height: 130vh;
 
     img {
-      width: 35%;
-      top: 38%;
-      left: 32%;
+      width: 40%;
+      top: 30%;
+      left: 30%;
     }
   }
 
-  @media only screen and ${device.laptop} {
-    img {
-      top: 50%;
-      left: 32%;
-    }
-  }
-
-  @media only screen and ${device.tablet} {
-    height: 120vh;
+  @media only screen and ${device.tabletLandscape} {
+    height: 150vh;
 
     img {
-      width: 47%;
-      top: 60%;
-      left: 25%;
+      width: 60%;
+      top: 45%;
+      left: 23%;
     }
   }
 
-  @media only screen and ${device.mobileL} {
+  @media only screen and ${device.tabletPortrait} {
+    height: 160vh;
+
+    img {
+      width: 70%;
+      top: 45%;
+      left: 18%;
+    }
+  }
+
+  @media only screen and ${device.phone} {
     height: 170vh;
 
     img {
       width: 80%;
-      top: 63%;
+      top: 60%;
       left: 13%;
     }
   }
@@ -143,40 +162,43 @@ export const IntroContainer = styled.div`
     column-gap: 4rem;
     column-rule: 1px solid #e2e2e2;
 
-    @media only screen and ${device.tablet} {
+    @media only screen and ${device.tabletPortrait} {
       -moz-column-count: 1;
       column-count: 1;
     }
   }
 
-  @media only screen and ${device.laptop} {
-    top: 35%;
-  }
-
-  @media only screen and ${device.tablet} {
+  @media only screen and ${device.tabletPortrait} {
     width: 75%;
+    top: 25%;
   }
 
-  @media only screen and ${device.mobileL} {
+  @media only screen and ${device.phone} {
     width: 90%;
-    top: 40%;
+    top: 35%;
   }
 `;
 
 export const SectionTitle = styled.h2<Props>`
   font-family: ${Font.font_primary};
   color: ${Color.color_black}
-  font-size: 3.3rem;
-  margin-bottom: 6%;
+  font-size: 3.4rem;
+  margin-bottom: 8%;
 
-  @media only screen and ${device.tablet} {
-    font-size: 2.9rem;
-    margin-bottom: 10%;
+  @media only screen and ${device.desktop} {
+    font-size: 3.5rem;
   }
 
-  @media only screen and ${device.mobileL} {
-    font-size: 2.5rem;
-    margin-bottom: 13%;
+  @media only screen and ${device.tabletLandscape} {
+    font-size: 3.3rem;
+  }
+
+  @media only screen and ${device.tabletPortrait} {
+    font-size: 3.2rem;
+  }
+
+  @media only screen and ${device.phone} {
+    font-size: 3.1rem;
   }
 `;
 
@@ -194,20 +216,16 @@ export const Char = styled.span<Props>`
 export const FeatureContainer = styled.div`
   width: 65%;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 
-  @media only screen and ${device.laptop} {
-    top: 50%;
-  }
-
-  @media only screen and ${device.tablet} {
+  @media only screen and ${device.tabletPortrait} {
     width: 75%;
   }
 
-  @media only screen and ${device.mobileL} {
+  @media only screen and ${device.phone} {
     width: 90%;
     top: 50%;
   }
@@ -218,10 +236,6 @@ export const FeaturesSection = styled.section`
   height: 100vh;
   position: relative;
   background-color: #eee;
-
-  @media only screen and ${device.mobileL} {
-    height: 125vh;
-  }
 `;
 
 export const FeaturesList = styled.ul`
@@ -238,7 +252,7 @@ export const Feature = styled.li`
     opacity: 1;
   }
 
-  @media only screen and ${device.mobileL} {
+  @media only screen and ${device.phone} {
     margin-bottom: 10%;
   }
 `;

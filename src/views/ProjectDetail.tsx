@@ -184,7 +184,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
         <NextProjectContainer>
           <span>다음은,&nbsp;</span>
           <StyledLink to={data[0].next_project[0]}>
-            <Text size="1.5" color={Color.color_black}>
+            <Text color={Color.color_black}>
               {data[0].next_project[1]} &rarr;
             </Text>
           </StyledLink>
