@@ -21,17 +21,20 @@ export const Navigation = styled.nav`
 
   z-index: 10;
 
-  padding: 1% 2%;
+  padding: 0% 2%;
 
-  @media only screen and ${device.mobileL} {
+  @media only screen and ${device.desktop} {
+    height: 6vh;
+  }
+
+  @media only screen and ${device.tabletLandscape} {
     height: 8vh;
-
-    padding: 1% 5%;
+    padding: 0% 5%;
   }
 `;
 
 export const BackButton = styled.i`
-  font-size: 3rem;
+  font-size: 3.5rem;
   color: ${Color.color_black};
   cursor: pointer;
 `;
@@ -68,8 +71,8 @@ export const TextButton = styled(Link)`
     }
   }
 
-  @media only screen and ${device.mobileL} {
-    font-size: 1.5rem;
+  @media only screen and ${device.phone} {
+    font-size: 1.6rem;
 
     &:not(:first-child) {
       margin-left: 1.5rem;

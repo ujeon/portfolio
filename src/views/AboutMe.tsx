@@ -172,9 +172,7 @@ const AboutMe: React.FC<RouteComponentProps> = ({
   cons = cons.map((phrase, i) => {
     return (
       <Feature key={`${phrase}-${i}`} ref={prosRef}>
-        <Text size="1.9" color={Color.color_black}>
-          {phrase}
-        </Text>
+        <Text color={Color.color_black}>{phrase}</Text>
       </Feature>
     );
   });
@@ -182,9 +180,7 @@ const AboutMe: React.FC<RouteComponentProps> = ({
   pros = pros.map((phrase, i) => {
     return (
       <Feature key={`${phrase}-${i}`} ref={prosRef}>
-        <Text size="1.9" color={Color.color_black}>
-          {phrase}
-        </Text>
+        <Text color={Color.color_black}>{phrase}</Text>
       </Feature>
     );
   });
@@ -201,7 +197,7 @@ const AboutMe: React.FC<RouteComponentProps> = ({
       <IntroSection>
         <IntroContainer ref={elTextContainer}>
           <SectionTitle>{titleArr}</SectionTitle>
-          <Text ref={elText} size="1.7" color={Color.color_black}>
+          <Text ref={elText} color={Color.color_black}>
             '고객의 입장에서 제품을 만들어야 한다', 대학교에서 마케팅을 공부하며
             기억에 남는 말 중 하나입니다. 간단한 문장이지만, 실천하기에는
             무척이나 어려운 말이지요. 그렇지만 수많은 기업은 고객들의 입장에서

@@ -23,7 +23,7 @@ export const ProjectsSection = styled.section`
   flex-direction: row;
 
 
-  @media only screen and ${device.tablet} {
+  @media only screen and ${device.tabletPortrait} {
     flex-direction:column;
   }
 `;
@@ -31,7 +31,7 @@ export const ProjectsSection = styled.section`
 export const ProjectTitle = styled.div`
   display: inline-block;
   font-family: ${Font.font_primary};
-  font-size: 3.2rem;
+  font-size: 3.6rem;
   font-weight: 700;
   margin: 5% 0 1% 0;
   color: ${Color.color_black};
@@ -43,7 +43,7 @@ export const ProjectTitle = styled.div`
     transparent 50%,
     ${Color.color_secondary} 50%
   );
-  background-size: 272%;
+  background-size: 300%;
   transition: all 0.5s cubic-bezier(0.86, 0, 0.07, 1);
 
   background-position: 100%;
@@ -58,24 +58,20 @@ export const ProjectTitle = styled.div`
     color: ${Color.color_primary};
   }
 
-  @media only screen and ${device.tablet} {
-    background-size: 300%;
+  @media only screen and ${device.desktop} {
+    font-size: 3.8rem;
+  }
+
+  @media only screen and ${device.tabletLandscape} {
+    font-size: 3.4rem;
+  }
+
+  @media only screen and ${device.tabletPortrait} {
+    font-size: 3.2rem;
+  }
+
+  @media only screen and ${device.phone} {
     font-size: 3rem;
-  }
-
-  @media only screen and ${device.mobileL} {
-    background-size: 290%;
-    font-size: 2.8rem;
-  }
-
-  @media only screen and ${device.mobileM} {
-    background-size: 300%;
-    font-size: 2.6rem;
-  }
-
-  @media only screen and ${device.mobileS} {
-    background-size: 270%;
-    font-size: 2.4rem;
   }
 `;
 
@@ -93,7 +89,7 @@ export const ProjectsContainer = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media only screen and ${device.tablet} {
+  @media only screen and ${device.tabletPortrait} {
     width: 100%;
   }
 `;

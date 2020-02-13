@@ -4,10 +4,6 @@ import { Link } from "react-router-dom";
 import { device } from "../../data/display";
 import * as Color from "../base/_colors";
 
-interface ButtonProps {
-  fontSize: number;
-}
-
 export const Button = styled.button`
   display: inline-block;
   padding: 15px 30px;
@@ -27,14 +23,9 @@ export const Button = styled.button`
     outline: 0;
   }
 
-  @media only screen and ${device.mobileL} {
+  @media only screen and ${device.phone} {
     padding: 10px 20px;
     font-size: 1.6rem;
-  }
-
-  @media only screen and ${device.mobileS} {
-    padding: 7px 15px;
-    font-size: 1.4rem;
   }
 `;
 

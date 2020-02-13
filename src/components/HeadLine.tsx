@@ -49,15 +49,11 @@ const HeadLine: React.FC<Props> = props => {
         <DescArea>
           <Description>
             <DescTitle>기간</DescTitle>
-            <Text size="1.6" color={Color.color_grey_light}>
-              {props.date}
-            </Text>
+            <Text color={Color.color_grey_light}>{props.date}</Text>
           </Description>
           <Description>
             <DescTitle>기술 스택</DescTitle>
-            <Text size="1.6" color={Color.color_grey_light}>
-              {props.tech_stack}
-            </Text>
+            <Text color={Color.color_grey_light}>{props.tech_stack}</Text>
           </Description>
         </DescArea>
         <ButtonArea>{elButton}</ButtonArea>
