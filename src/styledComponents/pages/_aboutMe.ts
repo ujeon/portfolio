@@ -115,8 +115,6 @@ export const IntroSection = styled.section`
   }
 
   @media only screen and ${device.tabletPortrait} {
-    height: 160vh;
-
     img {
       width: 70%;
       top: 45%;
@@ -213,6 +211,17 @@ export const Char = styled.span<Props>`
   }
 `;
 
+export const FeaturesSection = styled.section`
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: #eee;
+
+  @media only screen and ${device.tabletPortrait} {
+    height: 90vh;
+  }
+`;
+
 export const FeatureContainer = styled.div`
   width: 65%;
   position: absolute;
@@ -231,16 +240,9 @@ export const FeatureContainer = styled.div`
   }
 `;
 
-export const FeaturesSection = styled.section`
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  background-color: #eee;
-`;
-
 export const FeaturesList = styled.ul`
   list-style: none;
-  margin-bottom: 8%;
+  margin-bottom: 10%;
 `;
 
 export const Feature = styled.li`

@@ -29,6 +29,7 @@
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
+    "postbuild": "react-snap",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -49,5 +50,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": " https://ujeon.me/"
+  "homepage": " https://ujeon.me/",
+  "devDependencies": {
+    "react-snap": "^1.23.0"
+  }
 }
