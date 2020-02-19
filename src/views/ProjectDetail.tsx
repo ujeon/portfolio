@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
+import { Helmet } from "react-helmet";
+
 import { RouteComponentProps } from "react-router-dom";
 
 import ReactGA from "react-ga";
@@ -164,33 +166,45 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
   }
 
   return (
-    <main>
-      <NavBar pathname={props.location.pathname} back={props.history.goBack} />
+    <>
+      <Helmet>
+        <title>프로젝트 - {data[0].projectName}</title>
+        <meta charSet="utf-8" />
+        <meta name="description" content={data[0].description} />
+        <meta name="keywords" content="우전, 장우전, ujeon, jangujeon" />
+        <meta name="author" content="장우전" />
+      </Helmet>
+      <main>
+        <NavBar
+          pathname={props.location.pathname}
+          back={props.history.goBack}
+        />
 
-      <HeadLine
-        text={data[0].description}
-        tech_stack={data[0].tech_stack}
-        date={data[0].date}
-        url={data[0].url}
-      ></HeadLine>
-      <RelatedImgSection image={relatedImg} />
-      <PrimaryImgSection backgroundColor={data[0].primary_color}>
-        {elPrimaryImg}
-      </PrimaryImgSection>
-      <SecondaryImgSection backgroundColor={data[0].secondary_color}>
-        {elSecondaryImg}
-      </SecondaryImgSection>
-      <FooterSection>
-        <NextProjectContainer>
-          <span>다음은,&nbsp;</span>
-          <StyledLink to={data[0].next_project[0]}>
-            <Text color={Color.color_black}>
-              {data[0].next_project[1]} &rarr;
-            </Text>
-          </StyledLink>
-        </NextProjectContainer>
-      </FooterSection>
-    </main>
+        <HeadLine
+          text={data[0].description}
+          tech_stack={data[0].tech_stack}
+          date={data[0].date}
+          url={data[0].url}
+        ></HeadLine>
+        <RelatedImgSection image={relatedImg} />
+        <PrimaryImgSection backgroundColor={data[0].primary_color}>
+          {elPrimaryImg}
+        </PrimaryImgSection>
+        <SecondaryImgSection backgroundColor={data[0].secondary_color}>
+          {elSecondaryImg}
+        </SecondaryImgSection>
+        <FooterSection>
+          <NextProjectContainer>
+            <span>다음은,&nbsp;</span>
+            <StyledLink to={data[0].next_project[0]}>
+              <Text color={Color.color_black}>
+                {data[0].next_project[1]} &rarr;
+              </Text>
+            </StyledLink>
+          </NextProjectContainer>
+        </FooterSection>
+      </main>
+    </>
   );
 };
 export default ProjectDetail;

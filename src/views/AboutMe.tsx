@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { RouteComponentProps } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
@@ -186,47 +187,55 @@ const AboutMe: React.FC<RouteComponentProps> = ({
   });
 
   return (
-    <main>
-      <NavBar pathname={location.pathname} />
-      <HeaderSection>
-        <Name>
-          <span ref={elName}>Jang Ujeon</span>
-        </Name>
-      </HeaderSection>
+    <>
+      <Helmet>
+        <title>저를 소개합니다</title>
+        <meta charSet="utf-8" />
+        <meta name="keywords" content="우전, 장우전, ujeon, jangujeon" />
+        <meta name="author" content="장우전" />
+      </Helmet>
+      <main>
+        <NavBar pathname={location.pathname} />
+        <HeaderSection>
+          <Name>
+            <span ref={elName}>Jang Ujeon</span>
+          </Name>
+        </HeaderSection>
 
-      <IntroSection>
-        <IntroContainer ref={elTextContainer}>
-          <SectionTitle>{titleArr}</SectionTitle>
-          <Text ref={elText} color={Color.color_black}>
-            '고객의 입장에서 제품을 만들어야 한다', 대학교에서 마케팅을 공부하며
-            기억에 남는 말 중 하나입니다. 간단한 문장이지만, 실천하기에는
-            무척이나 어려운 말이지요. 그렇지만 수많은 기업은 고객들의 입장에서
-            제품을 만들기 위해 노력하고 있습니다.
-            <br />
-            프로그래밍을 공부하고 프로젝트를 진행하면서, 그동안 무심코 사용했던
-            웹서비스, 어플리케이션이 사실은 여러 사람의 '어떻게 하면 사용자가
-            편리하게 사용할 수 있을까?'라는 고민 끝에 만들어진 결과라는 것을
-            알게 되었습니다.
-            <br />
-            사용자의 입장에서 서비스를 만들려고 노력하는 많은 개발자 처럼, 저
-            역시도 사용자의 입장에서 코드를 작성하는 개발자가 되고 싶습니다.
-          </Text>
-        </IntroContainer>
-        <img ref={elImage} src={profileImgData.ujeon_half} alt="profile1" />
-      </IntroSection>
+        <IntroSection>
+          <IntroContainer ref={elTextContainer}>
+            <SectionTitle>{titleArr}</SectionTitle>
+            <Text ref={elText} color={Color.color_black}>
+              '고객의 입장에서 제품을 만들어야 한다', 대학교에서 마케팅을
+              공부하며 기억에 남는 말 중 하나입니다. 간단한 문장이지만,
+              실천하기에는 무척이나 어려운 말이지요. 그렇지만 수많은 기업은
+              고객들의 입장에서 제품을 만들기 위해 노력하고 있습니다.
+              <br />
+              프로그래밍을 공부하고 프로젝트를 진행하면서, 그동안 무심코
+              사용했던 웹서비스, 어플리케이션이 사실은 여러 사람의 '어떻게 하면
+              사용자가 편리하게 사용할 수 있을까?'라는 고민 끝에 만들어진
+              결과라는 것을 알게 되었습니다.
+              <br />
+              사용자의 입장에서 서비스를 만들려고 노력하는 많은 개발자 처럼, 저
+              역시도 사용자의 입장에서 코드를 작성하는 개발자가 되고 싶습니다.
+            </Text>
+          </IntroContainer>
+          <img ref={elImage} src={profileImgData.ujeon_half} alt="profile1" />
+        </IntroSection>
 
-      <FeaturesSection>
-        <FeatureContainer ref={elTextContainer}>
-          <SectionTitle>저는 이런 점들이 부족해요</SectionTitle>
-          <FeaturesList>{cons}</FeaturesList>
+        <FeaturesSection>
+          <FeatureContainer ref={elTextContainer}>
+            <SectionTitle>저는 이런 점들이 부족해요</SectionTitle>
+            <FeaturesList>{cons}</FeaturesList>
 
-          <SectionTitle>하지만 이런 장점들이 있어요</SectionTitle>
-          <FeaturesList>{pros}</FeaturesList>
-        </FeatureContainer>
-      </FeaturesSection>
+            <SectionTitle>하지만 이런 장점들이 있어요</SectionTitle>
+            <FeaturesList>{pros}</FeaturesList>
+          </FeatureContainer>
+        </FeaturesSection>
 
-      <Footer />
-    </main>
+        <Footer />
+      </main>
+    </>
   );
 };
 
