@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { device } from "../../data/display";
 import { moveCharInBottomSmall, moveInBottomSmall } from "../base/_animation";
 
-import ujeon_full from "../../assets/images/ujeon_full.jpg";
+import ujeon_full from "../../assets/images/profile/ujeon_full-min.jpg";
 
 import * as Font from "../base/_fonts";
 import * as Color from "../base/_colors";
