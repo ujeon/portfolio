@@ -171,7 +171,10 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
         <title>프로젝트 - {data[0].projectName}</title>
         <meta charSet="utf-8" />
         <meta name="description" content={data[0].description} />
-        <meta name="keywords" content="우전, 장우전, ujeon, jangujeon" />
+        <meta
+          name="keywords"
+          content={`${data[0].projectName}, ${data[0].projectName_en}`}
+        />
         <meta name="author" content="장우전" />
       </Helmet>
       <main>
