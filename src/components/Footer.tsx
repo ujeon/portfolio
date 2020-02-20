@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 
 import {
   FooterSection,
@@ -13,7 +13,51 @@ import { Text } from "../styledComponents/components/_typography";
 import { SocialLink } from "../styledComponents/base/utilities";
 import * as Color from "../styledComponents/base/_colors";
 
+const CryptoJS = require("crypto-js");
+
+const encryptedEmail = CryptoJS.AES.encrypt(
+  "wj9304@gmail.com",
+  "wkddnwjs"
+).toString();
+
+const encryptedPhone = CryptoJS.AES.encrypt(
+  "+8201091126563",
+  "wkddnwjs"
+).toString();
+
 const Footer: React.FC = () => {
+  const elEmail = useRef(document.createElement("a"));
+  const elPhone = useRef(document.createElement("a"));
+
+  const [isEmailDescrypted, setIsEmailDescrypted] = useState(false);
+  const [isPhoneDescrypted, setIsPhoneDescrypted] = useState(false);
+
+  const descryptEmail = () => {
+    const emailInHref = elEmail.current.href.split(":")[1];
+
+    if (!isEmailDescrypted) {
+      const emailBytes = CryptoJS.AES.decrypt(emailInHref, "wkddnwjs");
+      const originalEmail = emailBytes.toString(CryptoJS.enc.Utf8);
+
+      elEmail.current.href = `mailto:${originalEmail}`;
+
+      setIsEmailDescrypted(true);
+    }
+  };
+
+  const descryptPhone = () => {
+    const phoneInHref = elPhone.current.href.split(":")[1];
+
+    if (!isPhoneDescrypted) {
+      const phoneBytes = CryptoJS.AES.decrypt(phoneInHref, "wkddnwjs");
+      const originalphone = phoneBytes.toString(CryptoJS.enc.Utf8);
+
+      elPhone.current.href = `tel:${originalphone}`;
+
+      setIsPhoneDescrypted(true);
+    }
+  };
+
   return (
     <FooterSection>
       <CommentContainer>
@@ -27,7 +71,11 @@ const Footer: React.FC = () => {
         <SocialLink href="https://twitter.com/wj9304">
           <IconFooter className="icon ion-logo-twitter" />
         </SocialLink>
-        <SocialLink href="mailto:wj9304@gmail.com">
+        <SocialLink
+          ref={elEmail}
+          href={`mailto:${encryptedEmail}`}
+          onClick={descryptEmail}
+        >
           <IconFooter className="icon ion-ios-mail" />
         </SocialLink>
       </SocialIconsContainer>
@@ -45,7 +93,11 @@ const Footer: React.FC = () => {
       </AboutMeContainder>
 
       <ContactMeContainer>
-        <SocialLink href="tel:+8201091126563">
+        <SocialLink
+          ref={elPhone}
+          href={`tel:${encryptedPhone}`}
+          onClick={descryptPhone}
+        >
           <Text color={Color.color_grey_dark}>+82 10-9112-6563</Text>
         </SocialLink>
       </ContactMeContainer>

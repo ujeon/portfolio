@@ -28,7 +28,7 @@ export const HeadLineSection = styled.section`
   }
 `;
 
-export const HeadLineTitle = styled.div`
+export const HeadLineTitle = styled.h1`
   font-family: ${Font.font_primary};
   font-size: 4.6rem;
   font-weight: 900;

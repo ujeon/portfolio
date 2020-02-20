@@ -18,7 +18,7 @@ import misinterpreter1 from "../assets/images/misinterpreter/misinterpreter-scre
 import misinterpreter2 from "../assets/images/misinterpreter/misinterpreter-screenshot-min2.png";
 import misinterpreterRelated from "../assets/images/misinterpreter/photo-1453748866136-b1dd97284f49-min.jpeg";
 
-import ujeon_half from "../assets/images/ujeon_half.png";
+import ujeon_half from "../assets/images/profile/ujeon_half-min.png";
 
 interface imageDataType {
   [uritube: string]: {
