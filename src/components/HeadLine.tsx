@@ -23,7 +23,7 @@ type Props = {
 };
 
 const HeadLine: React.FC<Props> = props => {
-  const dividedText = props.text.split("*");
+  const dividedText = props.text && props.text.split("*");
   const elHeadLine = useRef(document.createElement("div"));
   let elDescription: JSX.Element | undefined;
   let elButton: JSX.Element | undefined;
@@ -64,9 +64,9 @@ const HeadLine: React.FC<Props> = props => {
   return (
     <HeadLineSection>
       <HeadLineTitle ref={elHeadLine}>
-        {dividedText[0]}
-        <span>{dividedText[1]}</span>
-        {dividedText[2]}
+        {dividedText && dividedText[0]}
+        <span>{dividedText && dividedText[1]}</span>
+        {dividedText && dividedText[2]}
       </HeadLineTitle>
       {elDescription}
     </HeadLineSection>
