@@ -56,6 +56,7 @@ export const AboutMeContainder = styled.div`
 export const IconFooter = styled.i`
   font-size: 2.5rem;
   color: ${Color.color_grey_dark};
+  margin: 0 1rem 0 1rem;
   padding: 0 1rem 0 1rem;
 
   &:hover,
