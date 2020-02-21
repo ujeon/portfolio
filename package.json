@@ -30,8 +30,7 @@
   },
   "scripts": {
     "predeploy": "yarn build && npm run sitemap",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start --history-api-fallback",
+    "start": "react-scripts start",
     "postbuild": "react-snap",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -54,7 +53,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage": " https://ujeon.me/",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
