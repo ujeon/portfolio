@@ -8,6 +8,8 @@ import App from "./App";
 import "./css/style.css";
 require("dotenv").config();
 
+//change
+
 const rootElement = document.getElementById("root")!;
 
 if (rootElement.hasChildNodes()) {
