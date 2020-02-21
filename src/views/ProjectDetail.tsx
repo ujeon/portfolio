@@ -168,7 +168,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
   return (
     <>
       <Helmet>
-        <title>프로젝트 - {data[0].projectName}</title>
+        <title>프로젝트</title>
         <meta charSet="utf-8" />
       </Helmet>
       <main>
