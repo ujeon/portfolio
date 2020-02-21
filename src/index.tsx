@@ -10,18 +10,18 @@ require("dotenv").config();
 
 const rootElement = document.getElementById("root")!;
 
-if (rootElement.hasChildNodes()) {
-  hydrate(
-    <HashRouter basename={process.env.PUBLIC_URL}>
-      <App />
-    </HashRouter>,
-    rootElement
-  );
-} else {
-  render(
-    <HashRouter basename={process.env.PUBLIC_URL}>
-      <App />
-    </HashRouter>,
-    rootElement
-  );
-}
+// if (rootElement.hasChildNodes()) {
+//   hydrate(
+//     <HashRouter basename={process.env.PUBLIC_URL}>
+//       <App />
+//     </HashRouter>,
+//     rootElement
+//   );
+// } else {
+render(
+  <HashRouter basename={process.env.PUBLIC_URL}>
+    <App />
+  </HashRouter>,
+  rootElement
+);
+// }
