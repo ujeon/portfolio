@@ -168,7 +168,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
   return (
     <>
       <Helmet>
-        <title>프로젝트</title>
+        <title>프로젝트 - {data[0] && data[0].projectName}</title>
         <meta charSet="utf-8" />
       </Helmet>
       <main>
@@ -178,24 +178,26 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
         />
 
         <HeadLine
-          text={data[0].description}
-          tech_stack={data[0].tech_stack}
-          date={data[0].date}
-          url={data[0].url}
+          text={data[0] && data[0].description}
+          tech_stack={data[0] && data[0].tech_stack}
+          date={data[0] && data[0].date}
+          url={data[0] && data[0].url}
         ></HeadLine>
         <RelatedImgSection image={relatedImg} />
-        <PrimaryImgSection backgroundColor={data[0].primary_color}>
+        <PrimaryImgSection backgroundColor={data[0] && data[0].primary_color}>
           {elPrimaryImg}
         </PrimaryImgSection>
-        <SecondaryImgSection backgroundColor={data[0].secondary_color}>
+        <SecondaryImgSection
+          backgroundColor={data[0] && data[0].secondary_color}
+        >
           {elSecondaryImg}
         </SecondaryImgSection>
         <FooterSection>
           <NextProjectContainer>
             <span>다음은,&nbsp;</span>
-            <StyledLink to={data[0].next_project[0]}>
+            <StyledLink to={data[0] && data[0].next_project[0]}>
               <Text color={Color.color_black}>
-                {data[0].next_project[1]} &rarr;
+                {data[0] && data[0].next_project[1]} &rarr;
               </Text>
             </StyledLink>
           </NextProjectContainer>
