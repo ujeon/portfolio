@@ -8,18 +8,20 @@ import App from "./App";
 import "./css/style.css";
 require("dotenv").config();
 
+//basename={process.env.PUBLIC_URL}
+
 const rootElement = document.getElementById("root")!;
 
 if (rootElement.hasChildNodes()) {
   hydrate(
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <App />
     </BrowserRouter>,
     rootElement
   );
 } else {
   render(
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter>
       <App />
     </BrowserRouter>,
     rootElement
