@@ -7,7 +7,7 @@ import ReactGA from "react-ga";
 import Main from "./views/Main";
 import ProjectDetail from "./views/ProjectDetail";
 import AboutMe from "./views/AboutMe";
-import ErrorPage from "./views/Errorpage";
+import ErrorPage from "./views/ErrorPage";
 
 ReactGA.initialize("UA-156912055-1");
 
