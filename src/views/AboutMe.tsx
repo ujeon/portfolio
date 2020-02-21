@@ -191,8 +191,6 @@ const AboutMe: React.FC<RouteComponentProps> = ({
       <Helmet>
         <title>저를 소개합니다</title>
         <meta charSet="utf-8" />
-        <meta name="keywords" content="우전, 장우전, ujeon, jangujeon" />
-        <meta name="author" content="장우전" />
       </Helmet>
       <main>
         <NavBar pathname={location.pathname} />
