@@ -77,7 +77,7 @@ const ProjectSection: React.FC = () => {
       if (devergePoint > i) {
         return (
           <Project ref={measuredLeftRef} key={data.projectName}>
-            <StyledLink to={data.projectName_en}>
+            <StyledLink to={`projects/${data.projectName_en}`}>
               <ProjectTitle>
                 {data.projectName}{" "}
                 <IconProject
@@ -131,7 +131,7 @@ const ProjectSection: React.FC = () => {
               />
             </ImageContainer>
 
-            <StyledLink to={data.projectName_en}>
+            <StyledLink to={`projects/${data.projectName_en}`}>
               <ProjectTitle>
                 {data.projectName}{" "}
                 <IconProject
