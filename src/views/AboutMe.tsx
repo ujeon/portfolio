@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { RouteComponentProps } from "react-router-dom";
-import { Helmet } from "react-helmet";
 
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
+import CustomHelmet from "../components/CustomHelmet";
 
 import {
   HeaderSection,
@@ -188,10 +188,11 @@ const AboutMe: React.FC<RouteComponentProps> = ({
 
   return (
     <>
-      <Helmet>
-        <title>저를 소개합니다</title>
-        <meta charSet="utf-8" />
-      </Helmet>
+      <CustomHelmet
+        title="저를 소개합니다"
+        keywords="우전, 장우전, ujeon, jangujeon, 개발자, 포트폴리오"
+        description="사용하는 사람의 입장을 고민하며 개발하는 다른 많은 개발자들 처럼, 사용자를 생각하며 코드를 작성하는 개발자가 되고 싶습니다."
+      ></CustomHelmet>
       <main>
         <NavBar pathname={location.pathname} />
         <HeaderSection>
