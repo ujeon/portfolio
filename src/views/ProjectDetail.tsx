@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useCallback, useRef } from "react";
-import { Helmet } from "react-helmet";
 
 import { RouteComponentProps } from "react-router-dom";
 
@@ -7,6 +6,7 @@ import ReactGA from "react-ga";
 
 import NavBar from "../components/NavBar";
 import HeadLine from "../components/HeadLine";
+import CustomHelmet from "../components/CustomHelmet";
 
 import {
   RelatedImgSection,
@@ -46,7 +46,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
 
   const imgNodes: any[] = [];
   const path = props.location.pathname;
-  const projectName = path.split("/")[1];
+  const projectName = path.split("/")[2];
 
   let elPrimaryImg: JSX.Element | undefined;
   let elSecondaryImg: JSX.Element[] | undefined;
@@ -167,10 +167,12 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
 
   return (
     <>
-      <Helmet>
-        <title>프로젝트 - {data[0] && data[0].projectName}</title>
-        <meta charSet="utf-8" />
-      </Helmet>
+      <CustomHelmet
+        title={`프로젝트를 소개합니다 - ${data[0] && data[0].projectName}`}
+        keywords={`${data[0] && data[0].projectName}, ${data[0] &&
+          data[0].projectName_en}`}
+        description={data[0] && data[0].description}
+      ></CustomHelmet>
       <main>
         <NavBar
           pathname={props.location.pathname}

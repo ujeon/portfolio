@@ -5,10 +5,10 @@ export default (
   <Switch>
     <Route exact path="/" />
     <Route exact path="/about-me" />
-    <Route exact path="/uritube" />
-    <Route exact path="/gdflower" />
-    <Route exact path="/secondhand" />
-    <Route exact path="/misinterpreter" />
-    <Route exact path="/404" />
+    <Route exact path="/projects/uritube" />
+    <Route exact path="/projects/gdflower" />
+    <Route exact path="/projects/secondhand" />
+    <Route exact path="/projects/misinterpreter" />
+    <Route />
   </Switch>
 );
