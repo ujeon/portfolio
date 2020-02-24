@@ -15,14 +15,19 @@ import { IconProject } from "../styledComponents/components/_projects";
 
 import * as Color from "../styledComponents/base/_colors";
 
-type Props = {
+type Schema = {
+  itemProp: string;
+};
+
+type Props<T> = {
   text: string;
   tech_stack?: string;
   date?: string;
   url?: string;
+  schemaInfo?: T;
 };
 
-const HeadLine: React.FC<Props> = props => {
+const HeadLine: React.FC<Props<Schema>> = props => {
   const dividedText = props.text && props.text.split("*");
   const elHeadLine = useRef(document.createElement("div"));
   let elDescription: JSX.Element | undefined;
@@ -63,7 +68,10 @@ const HeadLine: React.FC<Props> = props => {
 
   return (
     <HeadLineSection>
-      <HeadLineTitle ref={elHeadLine}>
+      <HeadLineTitle
+        ref={elHeadLine}
+        itemProp={props.schemaInfo && props.schemaInfo?.itemProp}
+      >
         {dividedText && dividedText[0]}
         <span>{dividedText && dividedText[1]}</span>
         {dividedText && dividedText[2]}

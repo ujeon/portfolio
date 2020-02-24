@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <FooterSection>
+    <FooterSection itemScope itemType="https://schema.org/Person">
       <CommentContainer>
         <Comment>Have a nice day :)</Comment>
       </CommentContainer>
@@ -75,6 +75,7 @@ const Footer: React.FC = () => {
           ref={elEmail}
           href={`mailto:${encryptedEmail}`}
           onClick={descryptEmail}
+          itemProp="email"
         >
           <IconFooter className="icon ion-ios-mail" />
         </SocialLink>
@@ -98,7 +99,9 @@ const Footer: React.FC = () => {
           href={`tel:${encryptedPhone}`}
           onClick={descryptPhone}
         >
-          <Text color={Color.color_grey_dark}>+82 10-9112-6563</Text>
+          <Text color={Color.color_grey_dark} itemProp="telephone">
+            +82 10-9112-6563
+          </Text>
         </SocialLink>
       </ContactMeContainer>
     </FooterSection>
