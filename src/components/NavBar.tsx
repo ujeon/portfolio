@@ -14,7 +14,6 @@ type NavBarProps = {
 };
 
 const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
-  console.log(props);
   const buttons = props.pathname !== "/about-me" && props.pathname === "/" && (
     <ButtonContainer>
       <TextButton to="about-me">
