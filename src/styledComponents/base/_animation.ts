@@ -42,12 +42,12 @@ export const moveCharInBottomSmall = keyframes`
 export const ShowUnderline = keyframes`
   0% {
     opacity: 0;
-    border: 0.3px solid ${Color.color_secondary};
+    border: 0.8px solid ${Color.color_secondary};
   }
 
  
   100% {
     opacity: 1;
-    border: 0.3px solid ${Color.color_secondary};
+    border: 0.8px solid ${Color.color_secondary};
   }
 `;

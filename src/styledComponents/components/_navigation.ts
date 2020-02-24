@@ -24,6 +24,18 @@ export const Navigation = styled.nav`
   @media only screen and ${device.desktop} {
     height: 4.3vh;
   }
+
+  @media only screen and ${device.tabletLandscape} {
+    height: 6.3vh;
+  }
+
+  @media only screen and ${device.tabletPortrait} {
+    height: 5.3vh;
+  }
+
+  @media only screen and ${device.phone} {
+    height: 6.3vh;
+  }
 `;
 
 export const BackButton = styled.i`
@@ -62,6 +74,10 @@ export const TextButton = styled(Link)`
     ${TextUnderLine} {
       animation: 0.7s ${ShowUnderline} forwards;
     }
+  }
+
+  @media only screen and ${device.tabletLandscape} {
+    font-size: 1.8rem;
   }
 
   @media only screen and ${device.phone} {
