@@ -39,15 +39,15 @@ export const moveCharInBottomSmall = keyframes`
   }
 `;
 
-export const LeftToRight = keyframes`
+export const ShowUnderline = keyframes`
   0% {
     opacity: 0;
-    border: 1px solid ${Color.color_secondary};
+    border: 0.3px solid ${Color.color_secondary};
   }
 
  
   100% {
     opacity: 1;
-    border: 1px solid ${Color.color_secondary};
+    border: 0.3px solid ${Color.color_secondary};
   }
 `;

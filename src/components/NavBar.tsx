@@ -14,6 +14,7 @@ type NavBarProps = {
 };
 
 const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
+  console.log(props);
   const buttons = props.pathname !== "/about-me" && props.pathname === "/" && (
     <ButtonContainer>
       <TextButton to="about-me">
@@ -23,12 +24,15 @@ const NavBar: React.FC<NavBarProps> = (props: NavBarProps) => {
     </ButtonContainer>
   );
 
-  const backward = props.pathname !== "/" && props.pathname !== "/about-me" && (
-    <BackButton
-      className="icon ion-ios-arrow-round-back"
-      onClick={props.back}
-    />
-  );
+  const backward = props.pathname !== "/about-me" &&
+    props.pathname !== "/about-me/" &&
+    props.pathname !== "/" && (
+      <BackButton
+        className="icon ion-ios-arrow-round-back"
+        onClick={props.back}
+      />
+    );
+
   return (
     <Navigation>
       {backward}
