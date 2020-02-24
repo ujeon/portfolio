@@ -189,8 +189,7 @@ const AboutMe: React.FC<RouteComponentProps> = ({
   return (
     <>
       <CustomHelmet
-        title="저를 소개합니다"
-        keywords="우전, 장우전, ujeon, jangujeon, 개발자, 포트폴리오"
+        title="개발자 장우전을 소개합니다"
         description="사용하는 사람의 입장을 고민하며 개발하는 다른 많은 개발자들 처럼, 사용자를 생각하며 코드를 작성하는 개발자가 되고 싶습니다."
       ></CustomHelmet>
       <main>

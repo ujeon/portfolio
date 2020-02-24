@@ -134,6 +134,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
             <img
               src={imageData[key].projectImg[0]}
               alt={imageData[key].projectImg[0]}
+              itemProp="image"
             />
           </ImageContainer>
         </PrimaryImgContainer>
@@ -156,7 +157,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
                 <span></span>
                 <span></span>
               </BrowserTab>
-              <img src={el} alt={el} />
+              <img src={el} alt={el} itemProp="image" />
             </ImageContainer>
           </SecondaryImgContainer>
         );
@@ -169,11 +170,9 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
     <>
       <CustomHelmet
         title={`프로젝트를 소개합니다 - ${data[0] && data[0].projectName}`}
-        keywords={`${data[0] && data[0].projectName}, ${data[0] &&
-          data[0].projectName_en}`}
         description={data[0] && data[0].description}
       ></CustomHelmet>
-      <main>
+      <main itemScope itemType="https://schema.org/CreativeWork">
         <NavBar
           pathname={props.location.pathname}
           back={props.history.goBack}
@@ -185,6 +184,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
           date={data[0] && data[0].date}
           url={data[0] && data[0].url}
         ></HeadLine>
+
         <RelatedImgSection image={relatedImg} />
         <PrimaryImgSection backgroundColor={data[0] && data[0].primary_color}>
           {elPrimaryImg}
