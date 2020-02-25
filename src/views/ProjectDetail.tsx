@@ -37,10 +37,6 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
   ReactGA.set({ page });
   ReactGA.pageview(page);
 
-  const schemaInfo = {
-    itemProp: "description"
-  };
-
   const [count, setCount] = useState(0);
   const [excuted, setExcuted] = useState(false);
   const [isImagesViewed, setIsImagesViewed] = useState(false);
@@ -176,7 +172,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
         title={`프로젝트를 소개합니다 - ${data[0] && data[0].projectName}`}
         description={data[0] && data[0].description}
       ></CustomHelmet>
-      <main itemScope itemType="https://schema.org/CreativeWork">
+      <main>
         <NavBar
           pathname={props.location.pathname}
           back={props.history.goBack}
@@ -187,7 +183,6 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
           tech_stack={data[0] && data[0].tech_stack}
           date={data[0] && data[0].date}
           url={data[0] && data[0].url}
-          schemaInfo={schemaInfo}
         ></HeadLine>
 
         <RelatedImgSection image={relatedImg} />
