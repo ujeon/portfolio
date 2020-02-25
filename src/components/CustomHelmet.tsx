@@ -8,18 +8,12 @@ type Props = {
   description?: string;
 };
 
-const CustomHelmet: React.FC<Props> = ({
-  title,
-
-  keywords,
-  description
-}: Props) => {
+const CustomHelmet: React.FC<Props> = ({ title, description }: Props) => {
   return (
     <Helmet>
       <meta charSet="utf-8" />
       <meta name="author" content="장우전" />
       <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
       <title>{title}</title>
     </Helmet>
   );
