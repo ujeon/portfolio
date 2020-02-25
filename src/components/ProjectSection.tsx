@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from "react";
+import React, { useEffect, useCallback, useMemo } from "react";
 
 import {
   ProjectsSection,
@@ -42,7 +42,7 @@ const images: Images = {
 const ProjectSection: React.FC = () => {
   const imageNodes: any[] = [];
 
-  const devergePoint = projectData.length / 2;
+  const divergePoint = projectData.length / 2;
 
   useEffect(() => {
     const viewImages = () => {
@@ -63,7 +63,7 @@ const ProjectSection: React.FC = () => {
     };
   }, [imageNodes]);
 
-  const measuredLeftRef = useCallback(
+  const projectRef = useCallback(
     node => {
       if (node !== null) {
         imageNodes.push(node);
@@ -72,11 +72,11 @@ const ProjectSection: React.FC = () => {
     [imageNodes]
   );
 
-  const projectListLeft: (JSX.Element | undefined)[] = projectData.map(
-    (data, i) => {
-      if (devergePoint > i) {
+  const projectListLeft: (JSX.Element | undefined)[] = useMemo(() => {
+    return projectData.map((data, i) => {
+      if (divergePoint > i) {
         return (
-          <Project ref={measuredLeftRef} key={data.projectName}>
+          <Project ref={projectRef} key={data.projectName}>
             <StyledLink to={`projects/${data.projectName_en}`}>
               <ProjectTitle>
                 {data.projectName}{" "}
@@ -109,14 +109,14 @@ const ProjectSection: React.FC = () => {
       } else {
         return undefined;
       }
-    }
-  );
+    });
+  }, [divergePoint, projectRef]);
 
-  const projectListRight: (JSX.Element | undefined)[] = projectData.map(
-    (data, i) => {
-      if (devergePoint <= i) {
+  const projectListRight: (JSX.Element | undefined)[] = useMemo(() => {
+    return projectData.map((data, i) => {
+      if (divergePoint <= i) {
         return (
-          <Project ref={measuredLeftRef} key={data.projectName}>
+          <Project ref={projectRef} key={data.projectName}>
             <ImageContainer>
               <BrowserTab type={data.type}>
                 <span></span>
@@ -147,8 +147,8 @@ const ProjectSection: React.FC = () => {
       } else {
         return undefined;
       }
-    }
-  );
+    });
+  }, [divergePoint, projectRef]);
 
   return (
     <ProjectsSection>
