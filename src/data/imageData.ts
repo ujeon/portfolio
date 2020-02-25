@@ -34,6 +34,13 @@ interface profileImgType {
   ujeon_half: string;
 }
 
+interface projectRepresentativeImgType {
+  [uritube: string]: string;
+  secondhand: string;
+  misinterpreter: string;
+  gdflower: string;
+}
+
 export const imageData: imageDataType = {
   uritube: {
     projectImg: [uritube1, uritube2, uritube3],
@@ -55,4 +62,11 @@ export const imageData: imageDataType = {
 
 export const profileImgData: profileImgType = {
   ujeon_half: ujeon_half
+};
+
+export const projectRepresentativeImg: projectRepresentativeImgType = {
+  uritube: uritube1,
+  secondhand: secondhand1,
+  misinterpreter: misinterpreter1,
+  gdflower: gdflower1
 };
