@@ -1,10 +1,12 @@
 {
   "@context": "https://schema.org",
-  "@type": "Person",
+  "@type": "CreativeWork",
   "familyName": "장",
   "givenName": "우전",
   "name": "장우전",
   "url": "https://ujeon.me/",
+  "description": "개발을 통해 가치를 전달하고 싶은 개발자 장우전의 포트폴리오입니다.",
+  "jobTitle": "프론트엔드 개발자",
   "contactPoint": {
     "@type": "ContactPoint",
     "email": "wj9304@gmail.com",
