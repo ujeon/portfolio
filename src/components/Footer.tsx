@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <FooterSection itemScope itemType="https://schema.org/Person">
+    <FooterSection itemProp="author" itemType="https://schema.org/Person">
       <CommentContainer>
         <Comment>Have a nice day :)</Comment>
       </CommentContainer>
