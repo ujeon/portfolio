@@ -29,6 +29,8 @@ import * as Color from "../styledComponents/base/_colors";
 import projectData from "../data/projectData.json";
 import { imageData } from "../data/imageData";
 
+import { projectScriptGenerator as scriptGenerator } from "../codelab/projectScriptGenerator";
+
 const ProjectDetail: React.FC<RouteComponentProps> = (
   props: RouteComponentProps
 ) => {
@@ -165,12 +167,25 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
       break;
     }
   }
-
+  console.log(
+    scriptGenerator(
+      data[0].projectName,
+      data[0].description,
+      `${data[0].projectName}, ${data[0].projectName_en}`,
+      data[0].url
+    )
+  );
   return (
     <>
       <CustomHelmet
         title={`프로젝트를 소개합니다 - ${data[0] && data[0].projectName}`}
         description={data[0] && data[0].description}
+        jsonData={scriptGenerator(
+          data[0].projectName,
+          data[0].description,
+          `${data[0].projectName}, ${data[0].projectName_en}`,
+          data[0].url
+        )}
       ></CustomHelmet>
       <main>
         <NavBar
