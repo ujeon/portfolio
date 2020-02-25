@@ -42,7 +42,7 @@ const AboutMe: React.FC<RouteComponentProps> = ({
   let cons: JSX.Element[] | string[] = prosCons.cons;
   let pros: JSX.Element[] | string[] = prosCons.pros;
 
-  let charNodes: any[] = [];
+  let charNodes: HTMLElement[] = [];
   let featureNodes: any[] = [];
 
   useEffect(() => {
@@ -152,7 +152,7 @@ const AboutMe: React.FC<RouteComponentProps> = ({
     [charNodes]
   );
 
-  const prosRef = useCallback(
+  const featureRef = useCallback(
     node => {
       if (node !== null) {
         featureNodes.push(node);
@@ -172,7 +172,7 @@ const AboutMe: React.FC<RouteComponentProps> = ({
 
   cons = cons.map((phrase, i) => {
     return (
-      <Feature key={`${phrase}-${i}`} ref={prosRef}>
+      <Feature key={`${phrase}-${i}`} ref={featureRef}>
         <Text color={Color.color_black}>{phrase}</Text>
       </Feature>
     );
@@ -180,7 +180,7 @@ const AboutMe: React.FC<RouteComponentProps> = ({
 
   pros = pros.map((phrase, i) => {
     return (
-      <Feature key={`${phrase}-${i}`} ref={prosRef}>
+      <Feature key={`${phrase}-${i}`} ref={featureRef}>
         <Text color={Color.color_black}>{phrase}</Text>
       </Feature>
     );
