@@ -218,7 +218,18 @@ const AboutMe: React.FC<RouteComponentProps> = ({
               역시도 사용자의 입장에서 코드를 작성하는 개발자가 되고 싶습니다.
             </Text>
           </IntroContainer>
-          <img ref={elImage} src={profileImgData.ujeon_half} alt="profile1" />
+          <picture>
+            <source
+              srcSet={`${profileImgData.ujeon_half_small} 1x, ${profileImgData.ujeon_half_large} 2x`}
+              media="(max-width: 37.5em)"
+            />
+            <img
+              srcSet={`${profileImgData.ujeon_half_small} 1x, ${profileImgData.ujeon_half_large} 2x`}
+              ref={elImage}
+              src={profileImgData.ujeon_half_large}
+              alt="ujeon-half-profile"
+            />
+          </picture>
         </IntroSection>
 
         <FeaturesSection>

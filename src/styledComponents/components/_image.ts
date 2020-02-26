@@ -7,7 +7,8 @@ import { moveInBottomBig } from "../base/_animation";
 interface projectImgProps {
   width?: string;
   backgroundColor?: string | undefined;
-  image?: string | undefined;
+  image_large?: string | undefined;
+  image_small?: string | undefined;
   type?: string;
 }
 
@@ -37,10 +38,14 @@ export const BrowserTab = styled.span<projectImgProps>`
 export const RelatedImgSection = styled.section<projectImgProps>`
   width: 100%;
   height: 90vh;
-  background-image: url(${props => props.image});
+  background-image: url(${props => props.image_small});
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0, 10%;
+
+  @media (min-resolution: 192dpi) and (min-width: 56.25em), (min-width: 125em) {
+    background-image: url(${props => props.image_large});
+  }
 
   @media only screen and ${device.tabletPortrait} {
     height: 50vh;
