@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { device } from "../../data/display";
 import { moveCharInBottomSmall, moveInBottomSmall } from "../base/_animation";
 
-import ujeon_full from "../../assets/images/profile/ujeon_full-min.jpg";
+import ujeon_full_small from "../../assets/images/profile/ujeon-full-small.jpg";
+import ujeon_full_large from "../../assets/images/profile/ujeon-full-large.jpg";
 
 import * as Font from "../base/_fonts";
 import * as Color from "../base/_colors";
@@ -17,7 +18,7 @@ export const HeaderSection = styled.section`
   width: 100%;
   height: 100vh;
   background-color: #f5f5f5;
-  background-image: url(${ujeon_full});
+  background-image: url(${ujeon_full_small});
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right;
@@ -25,6 +26,10 @@ export const HeaderSection = styled.section`
   @media only screen and ${device.tabletPortrait} {
     background-size: cover;
     background-position: center;
+  }
+
+  @media (min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em) {
+    background-image: url(${ujeon_full_large});
   }
 `;
 
