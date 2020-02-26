@@ -52,7 +52,8 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
 
   let elPrimaryImg: JSX.Element | undefined;
   let elSecondaryImg: JSX.Element[] | undefined;
-  let relatedImg: string | undefined;
+  let relatedImg_large: string | undefined;
+  let relatedImg_small: string | undefined;
 
   let data = projectData.filter(data => {
     if (data.projectName_en === projectName) {
@@ -124,7 +125,8 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
 
   for (let key in imageData) {
     if (key === projectName) {
-      relatedImg = imageData[key].relatedImg[0];
+      relatedImg_large = imageData[key].relatedImg_large[0];
+      relatedImg_small = imageData[key].relatedImg_small[0];
       elPrimaryImg = (
         <PrimaryImgContainer ref={measuredRef} type={data[0].type}>
           <ImageContainer>
@@ -167,14 +169,7 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
       break;
     }
   }
-  console.log(
-    scriptGenerator(
-      data[0].projectName,
-      data[0].description,
-      `${data[0].projectName}, ${data[0].projectName_en}`,
-      data[0].url
-    )
-  );
+
   return (
     <>
       <CustomHelmet
@@ -200,7 +195,10 @@ const ProjectDetail: React.FC<RouteComponentProps> = (
           url={data[0] && data[0].url}
         ></HeadLine>
 
-        <RelatedImgSection image={relatedImg} />
+        <RelatedImgSection
+          image_large={relatedImg_large}
+          image_small={relatedImg_small}
+        />
         <PrimaryImgSection backgroundColor={data[0] && data[0].primary_color}>
           {elPrimaryImg}
         </PrimaryImgSection>
