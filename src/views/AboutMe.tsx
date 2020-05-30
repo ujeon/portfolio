@@ -15,7 +15,7 @@ import {
   FeaturesSection,
   FeatureContainer,
   FeaturesList,
-  Feature
+  Feature,
 } from "../styledComponents/pages/_aboutMe";
 import { Text } from "../styledComponents/components/_typography";
 
@@ -26,7 +26,7 @@ import { profileImgData } from "../data/imageData";
 import { prosCons } from "../data/prosCons";
 
 const AboutMe: React.FC<RouteComponentProps> = ({
-  location
+  location,
 }: RouteComponentProps) => {
   const elName = useRef(document.createElement("div"));
   const elTextContainer = useRef(document.createElement("div"));
@@ -92,7 +92,7 @@ const AboutMe: React.FC<RouteComponentProps> = ({
     };
 
     const viewFeatures = () => {
-      featureNodes.forEach(el => {
+      featureNodes.forEach((el) => {
         if (
           el.offsetTop &&
           window.pageYOffset + window.innerHeight >
@@ -140,11 +140,11 @@ const AboutMe: React.FC<RouteComponentProps> = ({
     featureNodes,
     isTitleViewed,
     isTextViewed,
-    isImageViewed
+    isImageViewed,
   ]);
 
   const charRef = useCallback(
-    node => {
+    (node) => {
       if (node !== null) {
         charNodes.push(node);
       }
@@ -153,7 +153,7 @@ const AboutMe: React.FC<RouteComponentProps> = ({
   );
 
   const featureRef = useCallback(
-    node => {
+    (node) => {
       if (node !== null) {
         featureNodes.push(node);
       }
