@@ -7,7 +7,7 @@ import {
   AboutMeContainder,
   IconFooter,
   Comment,
-  ContactMeContainer
+  ContactMeContainer,
 } from "../styledComponents/components/_footer";
 import { Text } from "../styledComponents/components/_typography";
 import { SocialLink } from "../styledComponents/base/utilities";
@@ -85,7 +85,7 @@ const Footer: React.FC = () => {
           <Text color={Color.color_grey_dark}>Blog</Text>
         </SocialLink>
         <SocialLink
-          href="https://www.dropbox.com/s/kh0yf3dmz2ommxp/%EC%9E%A5%EC%9A%B0%EC%A0%84%20%EC%9D%B4%EB%A0%A5%EC%84%9C.pdf?dl=0"
+          href="https://www.dropbox.com/s/fsiic0oca7ydsn3/%EC%9D%B4%EB%A0%A5%EC%84%9C_%EC%9E%A5%EC%9A%B0%EC%A0%84.pdf?dl=0"
           target="_blank"
         >
           <Text color={Color.color_grey_dark}>Resume</Text>
